@@ -16,6 +16,7 @@ namespace TSB.Controllers
             var category = db.Categories.Where(x => x.ShowHome == true && x.Status == true).ToList();
             var model = new HomeViewModel
             {
+                Configs = db.Configs,
                 Baners = db.Baners.OrderByDescending(x=>x.CreateDate),
                 Customers = db.Customers,
                 CategoryHome = category,
@@ -49,7 +50,7 @@ namespace TSB.Controllers
         }
         public PartialViewResult Footer()
         {
-            var category = db.Categories;
+            var category = db.Categories.ToList(); ;
             var config = db.Configs.ToList();
             var model = new aboutfotter
             {

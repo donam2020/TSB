@@ -3,7 +3,7 @@
 
 
     <header>
-        @foreach (var item in Model.Configs)
+        @foreach (var item in Model.Configs.Take(1))
         {
             <div class="left">
                 <div class="icon-follow">

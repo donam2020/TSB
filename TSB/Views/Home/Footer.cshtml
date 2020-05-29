@@ -13,10 +13,10 @@
 
                 </div>
                 <div class="addres">
-                    @foreach (var item in Model.Config)
+                    @foreach (var item in Model.Config.Take(1))
                     {
                         <h2>
-                           @item.Name
+                            @item.Name
                         </h2>
                         <ul>
                             <li class="loca">
@@ -34,7 +34,7 @@
                                 <i class="fal fa-envelope"></i>Email:   @item.Email
                             </li>
                         </ul>
-                      
+
                     }
 
 
@@ -42,6 +42,7 @@
             </div>
             @foreach (var category in Model.Categories.Where(x => x.ParentId == null).Take(2))
             {
+
                 <div class=" col-md-3">
 
                     <div class="name">
@@ -49,20 +50,24 @@
                     </div>
 
                     <ul>
-                        <li>
-                            <a href="">Bo mạch điện tử</a>
-                        </li>
+                        @foreach (var childs in Model.Categories.Where(x => x.ParentId != category.Id))
+                        {
+                            <li>
+                                <a href="">@childs.Name</a>
+                            </li>
+                        }
 
-
-                        <li>
-                            <a href=""> Hệ thống sử lí hình ảnh</a>
-                        </li>
-                        <li>
-                            <a href="">  Tự động hoá nhà máy</a>
-                        </li>
-                        <li><a href="#"> Robot</a></li>
-                        <li> <a href="#">Giải pháp sinh thái</a></li>
+                        @*<li>
+                                <a href=""> Hệ thống sử lí hình ảnh</a>
+                            </li>
+                            <li>
+                                <a href="">  Tự động hoá nhà máy</a>
+                            </li>
+                            <li><a href="#"> Robot</a></li>
+                            <li> <a href="#">Giải pháp sinh thái</a></li>*@
                     </ul>
+
+
                 </div>
                 @*<div class="col-xs-6 col-md-3">
                         <div class="name">

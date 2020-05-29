@@ -82,29 +82,38 @@
         });
     </script>
 }
+
+
+
+
+
+
 <div id="baner">
     <div class="bg"></div>
     <div class="img"><img src="~/Content/img/baner/1.png" alt="" /></div>
     <div class="text-baner">
-        <div class="slogan">
-            <h2> <span>TSB</span><br /> Total Solution Business</h2>
-        </div>
-        <div class="sumary">
-            <span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </span>
-        </div>
-        <div class="submit">
-            <button class="btn btn-default">Xem thêm</button>
-        </div>
+        @foreach (var item in Model.Configs.Skip(1).Take(1))
+        {
+            <div class="slogan">
+                <h2> @item.Name</h2>
+            </div>
+            <div class="sumary">
+                <span>
+                   @item.Description
+                </span>
+            </div>
+            <div class="submit">
+                <button class="btn btn-default">Xem thêm</button>
+            </div>
+        }
+
     </div>
 </div>
 <div id="introl">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6 introl-left">
-                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Take(1))
+                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Skip(1).Take(1))
                 {
                     <div class="title">
                         <span>@item.Title</span>
@@ -192,7 +201,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 introl-left">
-                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Skip(1).Take(1))
+                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Take(1))
                 {
                     <div class="title">
                         <span>@item.Title</span>
