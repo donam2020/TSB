@@ -104,47 +104,48 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6 introl-left">
-                <div class="title">
-                    <span>Chúng tôi là</span>
-                    <h2>Công ty <br /> TNHH TBS</h2>
-                </div>
-                <div class="content">
-                    <span>
-                        <b>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </b><br /><br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br /><br />
-                        “The World is You”
-                    </span>
-                    <div class="ad">
-                        <ul>
-                            <li>
-                                <div class="number">25 +</div>
-                                <label>Kinh nghiệm</label>
-                            </li>
-                            <li>
-                                <div class="number">500 +</div>
-                                <label>Nhân viên</label>
-                            </li>
-                            <li>
-                                <div class="number">8</div>
-                                <label>Chi nhánh toàn cầu</label>
-                            </li>
-                        </ul>
+                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Take(1))
+                {
+                    <div class="title">
+                        <span>@item.Title</span>
+                        <h2>@item.Name</h2>
                     </div>
+                    <div class="content">
+                        <span>
+                            @Html.Raw(item.Content)
+                        </span>
+                        <div class="ad">
+                            <ul>
+                                <li>
+                                    <div class="number">25 +</div>
+                                    <label>Kinh nghiệm</label>
+                                </li>
+                                <li>
+                                    <div class="number">500 +</div>
+                                    <label>Nhân viên</label>
+                                </li>
+                                <li>
+                                    <div class="number">8</div>
+                                    <label>Chi nhánh toàn cầu</label>
+                                </li>
+                            </ul>
+                        </div>
 
-                </div>
+                    </div>
+                }
+
             </div>
             <div class="col-sm-12 col-md-6">
-                <div class="img-ad">
-                    <img src="~/Content/img/introl/1.png" alt="" />
-                </div>
-                <div class="img-ad">
-                    <img src="~/Content/img/introl/2.png" alt="" />
-                </div>
+                @foreach (var item in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Category))
+                {
+                    <div class="img-ad">
+                        <img src="@item.Image" alt="" />
+                    </div>
+                }
+
+                @*<div class="img-ad">
+                        <img src="~/Content/img/introl/2.png" alt="" />
+                    </div>*@
             </div>
         </div>
     </div>
@@ -154,29 +155,29 @@
 
         <ul>
             @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Category && x.Category.ParentId == null))
-            {               
-                    <li>
-                        <div class="icon">
-                            <img src="@item.Image" alt="" />
+            {
+                <li>
+                    <div class="icon">
+                        <img src="@item.Image" alt="" />
+                    </div>
+                    <div class="text">
+                        <div class="title">
+                            @item.Name
                         </div>
-                        <div class="text">
-                            <div class="title">
-                                @item.Name
-                            </div>
-                            <div class="content">
-                                @item.Sumary
-                            </div>
+                        <div class="content">
+                            @item.Sumary
                         </div>
-                        @*<div class="arrow-right">
+                    </div>
+                    @*<div class="arrow-right">
                             <i class="fal fa-chevron-right"></i>
                         </div>*@
-                    </li>
-               
+                </li>
+
 
                 @*@for (int i = 0; i < 5; i++)
-            {
+                    {
 
-            }*@
+                    }*@
             }
         </ul>
 
@@ -191,22 +192,26 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 introl-left">
-                <div class="title">
-                    <span>Dịch vụ của chúng tôi</span>
-                    <h2>Sản phẩm & Giải pháp</h2>
-                </div>
-                <div class="content">
-                    <span>
-                        <b>Chúng tôi kinh doanh các giải pháp tổng thể trong công nghiệp, nông nghiệp, thực phẩm:</b>
-                    </span>
-                    <ul>
-                        <li> <span>- Giải pháp tự động hoá công đoạn nhà máy</span></li>
-                        <li> <span>- Giải pháp điều khiển giám sát quản lí nhà máy SCADA</span></li>
-                        <li> <span>- Giải pháp nâng cao chất lượng sản xuất </span></li>
+                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Skip(1).Take(1))
+                {
+                    <div class="title">
+                        <span>@item.Title</span>
+                        <h2>@item.Name</h2>
+                    </div>
+                    <div class="content">
+                        <span>
+                            <b>@item.Sumary</b>
+                        </span>
+                        <ul>
+                            <li> <span>@Html.Raw(item.Content)</span></li>
+                            @*<li> <span>- Giải pháp điều khiển giám sát quản lí nhà máy SCADA</span></li>
+                                <li> <span>- Giải pháp nâng cao chất lượng sản xuất </span></li>*@
 
 
-                    </ul>
-                </div>
+                        </ul>
+                    </div>
+                }
+
             </div>
         </div>
 

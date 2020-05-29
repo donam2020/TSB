@@ -34,6 +34,10 @@ namespace TSB.Entites
         Slider,
         [Display(Name ="Đối tác")]
         Partner,
-        Logo
+        Logo,
+        [Display(Name ="Thể loại")]
+        Category,
+        [Display(Name ="Sản phẩm")]
+        Product
     }
 }
