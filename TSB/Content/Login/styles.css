@@ -1,0 +1,119 @@
+body
+{
+	font-size: 8pt;
+	color: #555555;
+	font-family: Verdana;
+}
+
+a
+{
+	color: #003399;
+	text-decoration: None;
+}
+
+a:hover
+{
+	color: #FF0000;
+	text-decoration: Underline;
+}
+
+input
+{
+	border: 1px solid #999999;
+}
+
+select
+{
+	border: 1px solid #999999;
+}
+
+.button
+{
+	border: 1px solid #999999;
+	background-color: #E0E0E0;
+}
+
+td
+{
+	font-size: 8pt;
+	color: #555555;
+	font-family: Verdana;
+	line-height: 13pt;
+}
+
+p
+{
+	font-size: 8pt;
+	color: #555555;
+	font-family: Verdana;
+	line-height: 13pt;
+	text-align: Justify;
+}
+
+.copyright
+{
+	font-size: 7pt;
+	color: #555555;
+	font-family: Arial;
+}
+
+.user
+{
+	font-size: 15pt;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-weight: Bold;
+	line-height: 18pt;
+}
+
+.wa
+{
+	color: #FFFFFF;
+	text-decoration: None;
+}
+
+.wa:hover
+{
+	color: #FFFFFF;
+	text-decoration: Underline;
+}
+
+.ga
+{
+	color: #555555;
+	text-decoration: None;
+}
+
+.function
+{
+	font-size: 10pt;
+	color: #FF0000;
+	text-decoration: None;
+	font-weight: Bold;
+}
+
+.tdline
+{
+	border-bottom: 1px solid #C0C0C0;
+}
+
+.tdlinew
+{
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.tdlinec
+{
+	border-bottom: 1px solid #F6F6F6;
+}
+
+.tdlinedot
+{
+	border-bottom: 1px dotted #C0C0C0;
+}
+
+.w
+{
+	color: #FFFFFF;
+	font-weight: Bold;
+}

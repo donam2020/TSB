@@ -1,0 +1,131 @@
+﻿@model TSB.Entites.Config
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayouAdmin.cshtml";
+}
+
+<style>
+    dd {
+        padding-top: 10px;
+    }
+
+    dt {
+        line-height: 39px;
+    }
+</style>
+
+<div>
+    <h4>Config</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InfoAbout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InfoAbout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkFacebook)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkFacebook)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryAbout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryAbout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageAbout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageAbout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleHome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleHome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkYoutube)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkYoutube)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkTwichter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkTwichter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkGoogle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkGoogle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Update", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

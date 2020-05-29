@@ -1,0 +1,97 @@
+﻿@model TSB.ViewModel.aboutfotter
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <div class="logo">
+                    @foreach (var item in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Logo))
+                    {
+                        <a href=""> <img src="@item.Image" alt="" /></a>
+                    }
+
+
+                </div>
+                <div class="addres">
+                    @foreach (var item in Model.Config)
+                    {
+                        <h2>
+                           @item.Name
+                        </h2>
+                        <ul>
+                            <li class="loca">
+                                <i class="fal fa-map-marker-alt"></i>   Địa chỉ: @item.Addres
+
+                            </li>
+                            <li>
+                                <i class="fad fa-phone-alt"></i> Điện thoại:  @item.Phone
+
+                            </li>
+                            <li>
+                                <i class="fad fa-print"></i>  Fax: +84(0)462800857
+                            </li>
+                            <li>
+                                <i class="fal fa-envelope"></i>Email:   @item.Email
+                            </li>
+                        </ul>
+                      
+                    }
+
+
+                </div>
+            </div>
+            @foreach (var category in Model.Categories.Where(x => x.ParentId == null).Take(2))
+            {
+                <div class=" col-md-3">
+
+                    <div class="name">
+                        @category.Name
+                    </div>
+
+                    <ul>
+                        <li>
+                            <a href="">Bo mạch điện tử</a>
+                        </li>
+
+
+                        <li>
+                            <a href=""> Hệ thống sử lí hình ảnh</a>
+                        </li>
+                        <li>
+                            <a href="">  Tự động hoá nhà máy</a>
+                        </li>
+                        <li><a href="#"> Robot</a></li>
+                        <li> <a href="#">Giải pháp sinh thái</a></li>
+                    </ul>
+                </div>
+                @*<div class="col-xs-6 col-md-3">
+                        <div class="name">
+                            Thông tin
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="">Trang chủ</a>
+                            </li>
+                            <li><a href="#">Giới thiệu chung</a></li>
+                            <li>
+                                <a href="">Tin tức</a>
+                            </li>
+                            <li>
+                                <a href="">Tuyển dụng</a>
+                            </li>
+                            <li>
+                                <a href="">Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>*@
+
+            }
+            <div class=" col-md-2">
+                <div class="name">
+                    Facebook
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>

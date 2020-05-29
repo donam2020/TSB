@@ -1,0 +1,32 @@
+﻿@model TSB.Entites.Article
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayouAdmin.cshtml";
+}
+
+
+@if (Model != null)
+{
+    <div>
+        <h4>Thông tin bài viết</h4>
+        <hr />
+        <div class="details">
+            <h2 class="name">@Model.Name</h2>
+            <div class="title">@Model.Title</div>
+            <div class="img text-center" >
+                <img src="@Model.Image" alt="" />
+            </div>
+            <div class="content">
+                <h2 class="name">@Html.Raw(Model.Content)</h2>
+            </div>
+        </div>
+        <p>
+            @Html.ActionLink("Chỉnh sửa", "Update", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+
+}
+

@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/style.css",
+    "inputFile": "Content/style.less"
+  },
+  {
+    "outputFile": "Content/Admin.css",
+    "inputFile": "Content/Admin.less"
+  }
+]

@@ -1,0 +1,91 @@
+﻿body {
+  margin: 0 auto;
+  padding: 0;
+  font: normal 13px arial;
+}
+#nav-top {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  background: #555;
+  float: left;
+  display: flex;
+}
+#nav-top ul {
+  display: none;
+  list-style: none;
+  background: none;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0px;
+  top: 40px;
+  z-index: 111;
+}
+#nav-top ul li {
+  background: #777;
+}
+#nav-top ul li:hover {
+  background: #ccc;
+}
+#nav-top ul li:hover a {
+  color: #777;
+  opacity: 0.85;
+}
+#nav-top li {
+  padding: 10px;
+  position: relative;
+  border-bottom: 1px #555 solid;
+}
+#nav-top li a {
+  color: #fff;
+  text-decoration: none;
+}
+#nav-top li:hover {
+  background: #ccc;
+  transition: all 1s;
+}
+#nav-top li:hover ul {
+  display: block;
+}
+.table-list {
+  width: 100%;
+  border: 1px #ccc solid;
+  border-collapse: collapse;
+}
+.table-list tr {
+  border: 1px #ccc solid;
+  padding: 5px;
+}
+.table-list tr td {
+  border: 1px #ccc solid;
+  padding: 5px;
+}
+.table-list th {
+  background: #555;
+  color: #fff;
+  padding: 5px 10px;
+  border-right: 1px solid #ccc;
+}
+input#Image {
+  border-radius: 3px;
+}
+.pagination-container {
+  text-align: center;
+}
+.details .name {
+  font-size: 13px;
+}
+.details .title {
+  text-align: center;
+  font-size: 36px;
+  color: #673915;
+}
+.details p {
+  line-height: 25px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #673915;
+}

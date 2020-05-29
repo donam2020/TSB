@@ -1,0 +1,57 @@
+﻿
+@model PagedList.IPagedList<TSB.Entites.Baner>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayouAdmin.cshtml";
+}
+
+<h2>Danh sách baner</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table-list">
+    <tr>
+        <th>
+          Tên baner
+        </th>
+        <th style="width:100px">
+           Ảnh baner
+        </th>
+        <th>
+           Đường dẫn
+        </th>
+
+        <th>Vị trí</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <img src="@item.Image" alt="" style="width:200px; height:100px;" />
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Positon)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Update", new { id = item.Id }) |
+
+                @Html.ActionLink("Xoá", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
