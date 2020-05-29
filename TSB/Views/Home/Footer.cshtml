@@ -16,7 +16,7 @@
                     @foreach (var item in Model.Config.Take(1))
                     {
                         <h2>
-                            @item.Name
+                            @Html.Raw(item.Name)
                         </h2>
                         <ul>
                             <li class="loca">
@@ -42,15 +42,12 @@
             </div>
             @foreach (var category in Model.Categories.Where(x => x.ParentId == null).Take(2))
             {
-
                 <div class=" col-md-3">
-
                     <div class="name">
                         @category.Name
                     </div>
-
                     <ul>
-                        @foreach (var childs in Model.Categories.Where(x => x.ParentId != category.Id))
+                        @foreach (var childs in Model.Categories.Where(x => x.ParentId == category.Id))
                         {
                             <li>
                                 <a href="">@childs.Name</a>

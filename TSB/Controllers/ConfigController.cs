@@ -21,7 +21,7 @@ namespace TSB.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [HttpPost,ValidateInput(false)]
         public ActionResult Create(Config config)
         {
             if (ModelState.IsValid)
@@ -41,7 +41,7 @@ namespace TSB.Controllers
 
             return View(update);
         }
-        [HttpPost]
+        [HttpPost,ValidateInput(false)]
         public ActionResult Update(int id, Config config)
         {
             config.Id = id;

@@ -18,7 +18,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.TextAreaFor(model => model.Name, new { @class = "form-control" })
+            @Html.TextAreaFor(model => model.Name, new { @class = "form-control ckeditor" })
             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -59,8 +59,8 @@
         @Html.LabelFor(model => model.ImageAbout, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.TextBoxFor(model => model.ImageAbout, new { @readonly = "readonly" })
-            <input type="button" name="btnSelectImg" id="btnSelectImg" value="Chọn ảnh" />
-            <div id="ImagePreview"></div>
+            <input type="button" name="btnSelectImg2" id="btnSelectImg2" value="Chọn ảnh" />
+            <div id="ImagePreview2"></div>
             @Html.ValidationMessageFor(model => model.ImageAbout, "", new { @class = "text-danger" })
 
         </div>

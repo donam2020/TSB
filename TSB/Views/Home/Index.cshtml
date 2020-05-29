@@ -95,7 +95,7 @@
         @foreach (var item in Model.Configs.Skip(1).Take(1))
         {
             <div class="slogan">
-                <h2> @item.Name</h2>
+                <h2> @Html.Raw(item.Name)</h2>
             </div>
             <div class="sumary">
                 <span>
