@@ -160,7 +160,6 @@
 </div>
 <div id="control">
     <div class="container">
-
         <ul>
             @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Category && x.Category.ParentId == null))
             {
@@ -180,8 +179,6 @@
                             <i class="fal fa-chevron-right"></i>
                         </div>*@
                 </li>
-
-
                 @*@for (int i = 0; i < 5; i++)
                     {
 
@@ -195,9 +192,13 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                <div class="img-ad">
-                    <img src="~/Content/img/1.png" alt="" />
-                </div>
+                @foreach (var baner in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Product))
+                {
+                    <div class="img-ad">
+                        <img src="@baner.Image" alt="" />
+                    </div>
+                }
+
             </div>
             <div class="col-sm-12 col-md-6 introl-left">
                 @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Take(1))
