@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202006010126446_update-date-cofig.designer.cs">
       <DependentUpon>202006010126446_update-date-cofig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006010457105_fax-config.cs" />
+    <Compile Include="Migrations\202006010457105_fax-config.designer.cs">
+      <DependentUpon>202006010457105_fax-config.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1408,6 +1412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006010126446_update-date-cofig.resx">
       <DependentUpon>202006010126446_update-date-cofig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006010457105_fax-config.resx">
+      <DependentUpon>202006010457105_fax-config.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

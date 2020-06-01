@@ -9,11 +9,8 @@
                     {
                         <a href=""> <img src="@item.Image" alt="" /></a>
                     }
-
-
                 </div>
-                <div class="addres">
-                 
+                <div class="addres">                 
                         <h2>
                             @Html.Raw(Model.Config.Name)
                         </h2>
@@ -27,16 +24,12 @@
 
                             </li>
                             <li>
-                                <i class="fad fa-print"></i>  Fax: +84(0)462800857
+                                <i class="fad fa-print"></i>  Fax: +84(0)@Model.Config.Fax
                             </li>
                             <li>
                                 <i class="fal fa-envelope"></i>Email:   @Model.Config.Email
                             </li>
                         </ul>
-
-                    
-
-
                 </div>
             </div>
             @foreach (var category in Model.Categories.Where(x => x.ParentId == null).Take(1))
@@ -49,10 +42,9 @@
                         @foreach (var childs in Model.Categories.Where(x => x.ParentId == category.Id))
                         {
                             <li>
-                                <a href="@Url.Action("category", "Home", new { catId = category.Id})">@childs.Name</a>
+                                <a href="@Url.Action("category", "Home", new { catId = childs.Id})">@childs.Name</a>
                             </li>
                         }
-
                         @*<li>
                                 <a href=""> Hệ thống sử lí hình ảnh</a>
                             </li>
@@ -62,8 +54,6 @@
                             <li><a href="#"> Robot</a></li>
                             <li> <a href="#">Giải pháp sinh thái</a></li>*@
                     </ul>
-
-
                 </div>
                 <div class="col-xs-6 col-md-3">
                         <div class="name">
@@ -71,7 +61,7 @@
                         </div>
                         <ul>
                             <li>
-                                <a href="">Trang chủ</a>
+                                <a href="/">Trang chủ</a>
                             </li>
                             @foreach (var item in Model.Categories.Where(x => x.ParentId == null).Skip(2).Take(3))
                             {
@@ -83,13 +73,11 @@
                                     <a href="">Tuyển dụng</a>
                                 </li>*@
                             }
-
                             <li>
                                 <a href="">Liên hệ</a>
                             </li>
                         </ul>
                     </div>
-
             }
             <div class=" col-md-2">
                 <div class="name">
@@ -97,6 +85,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </footer>

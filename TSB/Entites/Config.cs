@@ -40,5 +40,7 @@ namespace TSB.Entites
         public string LinkTwichter { get; set; }
 
         public string LinkGoogle { get; set; }
+        [RegularExpression(@"\d+", ErrorMessage = "Chỉ nhập số nguyên")]
+        public int Fax { get; set; }
     }
 }
