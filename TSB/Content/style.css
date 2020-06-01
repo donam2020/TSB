@@ -851,4 +851,13 @@ button:focus {
   #comment .quotes .email-contact {
     margin: 0;
   }
+  #comment .quotes .email-contact input {
+    transform: translate(-18px, 0px);
+    border-radius: 5px;
+    border: none;
+  }
+  #comment .quotes .email-contact button {
+    transform: translate(0px, 0px);
+    border-radius: 5px;
+  }
 }
