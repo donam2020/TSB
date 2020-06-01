@@ -687,8 +687,9 @@ button:focus {
   }
   .menu .header-bottom .btn-mobile {
     float: right;
-    font-size: 30px;
+    font-size: 39px;
     display: block;
+    color: #5c5c5c;
   }
   .menu .header-bottom .nav-menu {
     background: #fff;
