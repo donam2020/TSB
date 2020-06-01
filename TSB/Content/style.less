@@ -481,6 +481,9 @@ header {
 
         .slick {
             padding-right: 20px;
+            &:focus{
+                outline:none;
+            }
         }
     }
 
@@ -492,6 +495,7 @@ header {
         .arrow-left, .arrow-right {
             background: none;
             border: none;
+            
         }
 
         .arrow-left {
@@ -716,7 +720,11 @@ footer {
         padding: 5px 0 !important;
     }
 }
-
+.slick-slide,input,button{
+    &:focus{
+        outline:none;
+    }
+}
 @media only screen and (max-width: 600px) {
     header {
         display:none;        

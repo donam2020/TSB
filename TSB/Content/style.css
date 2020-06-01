@@ -461,6 +461,10 @@ footer .header-bottom .nav-menu ul li a {
 #comment .slider .slick {
   padding-right: 20px;
 }
+#news .slider .slick:focus,
+#comment .slider .slick:focus {
+  outline: none;
+}
 #news .arrow,
 #comment .arrow {
   position: absolute;
@@ -664,6 +668,11 @@ footer .name:before {
   font-size: 14px;
   font-weight: normal;
   padding: 5px 0 !important;
+}
+.slick-slide:focus,
+input:focus,
+button:focus {
+  outline: none;
 }
 @media only screen and (max-width: 600px) {
   header {
