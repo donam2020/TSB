@@ -657,9 +657,12 @@ footer .name:before {
 .contact {
   color: #673915;
 }
+.contact i {
+  margin-right: 10px;
+}
 .contact h2 {
   background: #fff;
-  font-size: 17px;
+  font-size: 100%;
   color: #14488B;
 }
 .contact form {
@@ -674,6 +677,49 @@ footer .name:before {
 input:focus,
 button:focus {
   outline: none;
+}
+/*introl*/
+.p-0 {
+  padding: 0;
+}
+.contact .table-striped {
+  border: 2px solid #bbe0e3;
+}
+.contact .table-striped td {
+  border: 2px solid #bbe0e3;
+}
+.contact .td-30 {
+  width: 30%;
+  padding: 10px 10px;
+}
+.contact .td-70 {
+  width: 70%;
+  padding: 10px 10px;
+}
+.contact ul {
+  list-style: none;
+}
+.contact ul li {
+  border-bottom: 1px solid #999;
+  padding: 10px 10px;
+}
+.contact ul li a {
+  color: #393939;
+  text-decoration: none;
+}
+.contact ul li a:hover {
+  color: #14488B;
+  transition: all 1s;
+}
+.contact .action {
+  background: #14488B;
+  color: #fff;
+  padding: 5px 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.contact img {
+  width: 100%;
 }
 @media only screen and (max-width: 600px) {
   header {

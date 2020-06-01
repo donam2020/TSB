@@ -1,0 +1,110 @@
+﻿@model TSB.ViewModel.HomeViewModel
+@{
+    ViewBag.Title = ViewBag.messenger;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container contact">
+    <div class="row">
+
+        <div class="col-xs-12 col-md-10 ">
+            <h2> <i class="far fa-chevron-circle-right"></i><span>GIỚI THIỆU CÔNG TY</span></h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td scope="col" class="td-30">Tên công ty</td>
+                        <td scope="col" class="td-70">
+                            Công ty TNHH TSB
+                        </td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row" class="td-30">CEO/Representative	</td>
+                        <td scope="col" class="td-70">
+                            Isamu Kaburagi
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" class="td-30">
+                            Sơ lược Hoạt động kinh doanh
+                        </td>
+                        <td scope="col" class="td-70">
+                            <p> Nhập khẩu và Xuất khẩu linh kiện điện, bán ra thị trường nội địa</p>
+                            <p>
+                                Nhập khẩu và Xuất khẩu linh kiện điện tử như cổng kết nối, cáp kết nối, bán ra thị trường nội địa
+                            </p>
+                            <p>
+                                Nhập khẩu và Xuất khẩu máy móc sản xuất linh kiện điên tử như cổng kết nối, cáp kết nối, bán ra thị trường nội địa
+                            </p>
+                            <p>
+                                Kinh doanh Giải pháp Sinh thái
+                            </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-30"> Thành lập</td>
+                        <td class="td-70">
+                            Sept. 1996
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-30">
+                            Vốn đầu tư
+                        </td>
+                        <td class="td-70">
+                            <p>
+                                US$990,000 （Domestic- Nội địa）,US$1,800,000（Overseas- Nước ngoài）
+                            </p>
+                            <p>
+                                US$2,800,000（TSB Group-Tập đoàn TSB）
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-30">
+                            Nhân viên
+                        </td>
+                        <td class="td-70">
+                            45（Domestic- Nội địa）、450名（Including Overseas- bao gồm nước ngoài）
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-30">Doanh thu hàng năm</td>
+                        <td class="td-70">
+                            US$73Million（2013）
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-12 col-md-2 p-0">
+            <ul>
+                @foreach (var category in Model.CategoryHome.Where(x => x.TypeShow == TSB.Entites.TyShow.Article && x.ParentId == null).Take(1))
+                {
+                    <li class="action">@category.Name</li>
+                    foreach (var childs in Model.CategoryHome.Where(x => x.ParentId == category.Id))
+                    {
+                        <li><a href="@Url.Action("Introl","Home",new { catID = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
+                        @*<li><a href="@Url.Action("History","Home")"><i class="far fa-chevron-circle-right"></i>Lịch sử phát triển</a></li>
+                            <li><a href="#"><i class="far fa-chevron-circle-right"></i>Sơ đồ tổ chức</a></li>
+                            <li><a href="#"><i class="far fa-chevron-circle-right"></i>Mạng lưới TSB</a></li>
+                            <li><a href="#"><i class="far fa-chevron-circle-right"></i>Sơ đồ chức năng</a></li>*@
+                    }
+
+                }
+
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+

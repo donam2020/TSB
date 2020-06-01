@@ -1352,7 +1352,6 @@
     <Content Include="Views\Contact\Create.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\Delete.cshtml" />
-    <Content Include="Views\Home\Baner.cshtml" />
     <Content Include="Views\Config\Index.cshtml" />
     <Content Include="Views\Config\Create.cshtml" />
     <Content Include="Views\Config\Update.cshtml" />
@@ -1361,6 +1360,9 @@
     <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Home\Introl.cshtml" />
+    <Content Include="Views\Home\History.cshtml" />
+    <Content Include="Views\Home\Diagram.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,136 @@
+﻿@model TSB.ViewModel.HomeViewModel
+@{
+    ViewBag.Title = ViewBag.messenger;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container contact">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 ">
+                <h2> <i class="far fa-chevron-circle-right"></i><span>LỊCH SỬ PHÁT TRIỂN</span></h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td scope="col" >1996 Sept.</td>
+                            <td scope="col">
+                                Thành lập công ty Tokyo SINBON. Vốn đầu tư US$300,000
+                            </td>
+                            @*<td rowspan="13" style="width:26%;">
+                                <p style="text-align:center;"><img src="~/Content/img/history/2.png" alt="" /></p>
+                                <p style="text-align:center;"><img src="~/Content/img/history/3.png" alt="" /></p>
+                                <p style="text-align:center;"><img src="~/Content/img/history/4.png" alt="" /></p>
+                            </td>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">1999 Oct.</td>
+                            <td scope="col">
+                                Thành lập nhà máy Hakuba
+
+                            </td>
+                           
+                        </tr>
+                        <tr>
+                            <td scope="row">2003 Feb.</td>
+                            <td scope="col">
+                                Thành lập TSB Bangkok
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2003 Nov.</td>
+                            <td scope="col">
+                                Tăng vốn lên US$990,000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2005 Feb.</td>
+                            <td scope="col">
+                                Thành lập TSB Thượng Hải
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2005 May.</td>
+                            <td scope="col">
+                                Thành lập Văn phòng TSB HongKong và Trường An
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2006 Apr.</td>
+                            <td scope="col">
+                                Đổi tên Công ty thành Công ty TNHH TSB
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2007 May.</td>
+                            <td scope="col">
+                                Thành lập TSB Việt Nam
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2008 Feb.	.</td>
+                            <td scope="col">
+                                Thành lập TSB Lào
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2010 Mar.	.</td>
+                            <td scope="col">
+                                Thành lập Văn phòng TSB Thượng Hải Tô Châu
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2012 Feb.	</td>
+                            <td scope="col">
+                                Thành lập chi nhánh TSB Đài Loan
+
+                            </td>
+                        <tr>
+                            <td scope="row">2012 Oct.</td>
+                            <td scope="col">
+                                Thành lập Văn phòng TSB Kuala Lumpur
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2014年	.</td>
+                            <td scope="col">
+                                Kế hoạch thành lập TSB Manila
+
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-md-2 p-0">
+                <ul>
+                    @foreach (var category in Model.CategoryHome.Where(x => x.ParentId == null && x.TypeShow == TSB.Entites.TyShow.Article).Take(1))
+                    {
+                        <li class="action">@category.Name</li>
+                        foreach (var chils in Model.CategoryHome.Where(x => x.ParentId == category.Id))
+                        {
+                            <li><a href="@Url.Action("category", "Home", new { catId = chils.Id })"><i class="far fa-chevron-circle-right"></i>@chils.Name</a></li>
+                            @*<li><a href="@Url.Action("History","Home")"><i class="far fa-chevron-circle-right"></i>Lịch sử phát triển</a></li>
+                            <li><a href="#"><i class="far fa-chevron-circle-right"></i>Sơ đồ tổ chức</a></li>
+                            <li><a href="#"><i class="far fa-chevron-circle-right"></i>Mạng lưới TSB</a></li>
+                            <li><a href="#"><i class="far fa-chevron-circle-right"></i>Sơ đồ chức năng</a></li>*@
+                        }
+
+
+                    }
+
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+    </div>

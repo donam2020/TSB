@@ -105,5 +105,6 @@ namespace TSB.Controllers
             var details = service.Getone(id);
             return View(details);
         }
+       
     }
 }

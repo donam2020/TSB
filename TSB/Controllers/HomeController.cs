@@ -60,9 +60,40 @@ namespace TSB.Controllers
             };
             return PartialView(model);
         }
-        public PartialViewResult Baner()
+    
+        public ActionResult Introl()
         {
-            return PartialView();
+            ViewBag.messenger = "Giới thiệu công ty";
+            var model = new HomeViewModel
+            {
+                CategoryHome = db.Categories.Where(x => x.ShowHome == true && x.Status == true).ToList()
+            };
+            return View(model);
+        }
+        public ActionResult History()
+        {
+            ViewBag.messenger = "Lịch sử phát triển";
+
+            var model = new HomeViewModel
+            {
+                CategoryHome = db.Categories.Where(x => x.ShowHome == true && x.Status == true).ToList()
+            };
+            return View(model);
+            
+        }
+        public ActionResult Diagram()
+        {
+
+            ViewBag.messenger = "Doanh thu hàng năm và sơ đồ tổ chức";
+            var model = new HomeViewModel
+            {
+                CategoryHome = db.Categories.Where(x => x.ShowHome == true && x.Status == true).ToList()
+            };
+            return View(model);
+        }
+        public ActionResult category()
+        {
+            return View();
         }
     }
 }

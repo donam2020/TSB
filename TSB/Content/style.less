@@ -702,10 +702,12 @@ footer {
 /*Contact*/
 .contact {
     color: #673915;
-
+    i{
+        margin-right:10px;
+    }
     h2 {
         background: @cl-w;
-        font-size: 17px;
+        font-size: 100%;
         color: @cl-14;
     }
 
@@ -725,10 +727,61 @@ footer {
         outline:none;
     }
 }
+/*introl*/
+.p-0 {
+    padding: 0;
+}
+.contact {
+    .table-striped {
+        border: 2px solid #bbe0e3;
+
+        td {
+            border: 2px solid #bbe0e3;
+        }
+    }
+
+    .td-30 {
+        width: 30%;
+        padding: 10px 10px;
+    }
+
+    .td-70 {
+        width: 70%;
+        padding: 10px 10px;
+    }
+
+    ul {
+        list-style: none;
+        li{
+            border-bottom:1px solid #999;
+            padding:10px 10px;
+            a{
+                color:#393939;
+                text-decoration:none;
+                &:hover{
+                    color:@cl-14;
+                    .tran;
+                }
+            }
+           
+        }
+      }
+    .action{
+        background:@cl-14;
+        color:@cl-w;
+        padding:5px 5px;
+        text-transform:uppercase;
+        font-weight:500;
+    }
+   img{
+       width:100%;
+   }
+}
 @media only screen and (max-width: 600px) {
     header {
-        display:none;        
+        display: none;
     }
+
     .menu {
         .nav-menu {
             display: block;
@@ -736,12 +789,13 @@ footer {
 
         .header-bottom {
             padding: 10px;
-            width:50px;
+            width: 50px;
+
             .btn-mobile {
                 float: right;
                 font-size: 39px;
                 display: block;
-                color:@color-5c;
+                color: @color-5c;
             }
 
             .nav-menu {
@@ -785,41 +839,48 @@ footer {
                             width: 100%;
                             bottom: 0;
                             opacity: 0.4;
-                            left:0;
+                            left: 0;
                         }
                     }
                 }
             }
+
             .responsive-menu {
                 left: 0;
             }
         }
     }
-    #baner{
-        height:auto;
-        .bg{
-            height:auto;
+
+    #baner {
+        height: auto;
+
+        .bg {
+            height: auto;
         }
-        .text-baner{
-            width:100%;
-           left:0;
-           top:10%;
-           padding:0 40px;         
-        
-           h2{
-               font-size:21px;
-               line-height:23px;
-               span{
-                   font-size:32px;
-                   line-height:33px;
-               }
-           }
-           .sumary{
-               font-size:14px;
-           }
+
+        .text-baner {
+            width: 100%;
+            left: 0;
+            top: 10%;
+            padding: 0 40px;
+
+            h2 {
+                font-size: 21px;
+                line-height: 23px;
+
+                span {
+                    font-size: 32px;
+                    line-height: 33px;
+                }
+            }
+
+            .sumary {
+                font-size: 14px;
+            }
         }
     }
-    #introl, #control,#service {
+
+    #introl, #control, #service {
         margin: 0;
         padding: 0;
 
@@ -850,25 +911,30 @@ footer {
 
             li {
                 margin-bottom: @p-3;
+
                 .arrow-right {
                     transform: translate(165px, -20px);
                 }
             }
         }
-        h2{
-            font-size:36px;
+
+        h2 {
+            font-size: 36px;
         }
-        .content{
-            transform:translate(0px ,10px);
+
+        .content {
+            transform: translate(0px,10px);
         }
     }
-    #service{
-        ul{
-            li{
-                margin:0;
+
+    #service {
+        ul {
+            li {
+                margin: 0;
             }
         }
     }
+
     #news {
         .name {
             width: 100%;
@@ -886,10 +952,11 @@ footer {
             }
         }
 
-        .quotes{
-            display:none;
+        .quotes {
+            display: none;
         }
     }
+
     #comment {
         .bg {
             padding: 30px;
@@ -921,9 +988,10 @@ footer {
                     border-radius: 5px;
                     border: none;
                 }
-                button{
-                    transform:translate(0px,0px);
-                    border-radius:5px;
+
+                button {
+                    transform: translate(0px,0px);
+                    border-radius: 5px;
                 }
             }
         }
