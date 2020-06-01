@@ -39,7 +39,7 @@
 
                 </div>
             </div>
-            @foreach (var category in Model.Categories.Where(x => x.ParentId == null).Take(2))
+            @foreach (var category in Model.Categories.Where(x => x.ParentId == null).Take(1))
             {
                 <div class=" col-md-3">
                     <div class="name">
@@ -65,26 +65,30 @@
 
 
                 </div>
-                @*<div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-md-3">
                         <div class="name">
-                            Thông tin
+                           Thông tin
                         </div>
                         <ul>
                             <li>
                                 <a href="">Trang chủ</a>
                             </li>
-                            <li><a href="#">Giới thiệu chung</a></li>
-                            <li>
-                                <a href="">Tin tức</a>
-                            </li>
-                            <li>
-                                <a href="">Tuyển dụng</a>
-                            </li>
+                            @foreach (var item in Model.Categories.Where(x => x.ParentId == null).Skip(2).Take(3))
+                            {
+                                <li><a href="#">@item.Name</a></li>
+                                @*<li>
+                                    <a href="">Tin tức</a>
+                                </li>
+                                <li>
+                                    <a href="">Tuyển dụng</a>
+                                </li>*@
+                            }
+
                             <li>
                                 <a href="">Liên hệ</a>
                             </li>
                         </ul>
-                    </div>*@
+                    </div>
 
             }
             <div class=" col-md-2">
