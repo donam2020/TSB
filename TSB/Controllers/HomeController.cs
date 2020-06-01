@@ -17,10 +17,10 @@ namespace TSB.Controllers
             var model = new HomeViewModel
             {
                 Configs = db.Configs.FirstOrDefault(),
-                Baners = db.Baners.OrderByDescending(x=>x.CreateDate),
+                Baners = db.Baners.OrderByDescending(x => x.CreateDate),
                 Customers = db.Customers,
                 CategoryHome = category,
-                Articles = db.Articles.OrderByDescending(x=>x.CreateDate)
+                Articles = db.Articles.OrderByDescending(x => x.CreateDate)
             };
             return View(model);
         }
@@ -42,9 +42,9 @@ namespace TSB.Controllers
             var catagory = db.Categories;
             var model = new HomeViewModel
             {
-                Configs= db.Configs.FirstOrDefault(),
+                Configs = db.Configs.FirstOrDefault(),
                 CategoryHome = catagory,
-                Baners = db.Baners.OrderByDescending(x=>x.CreateDate)
+                Baners = db.Baners.OrderByDescending(x => x.CreateDate)
             };
             return PartialView(model);
         }
@@ -55,12 +55,12 @@ namespace TSB.Controllers
             var model = new aboutfotter
             {
                 Categories = category,
-                Baners = db.Baners.OrderByDescending(x=>x.CreateDate),
+                Baners = db.Baners.OrderByDescending(x => x.CreateDate),
                 Config = db.Configs.FirstOrDefault()
             };
             return PartialView(model);
         }
-    
+
         public ActionResult Introl()
         {
             ViewBag.messenger = "Giới thiệu công ty";
@@ -79,7 +79,7 @@ namespace TSB.Controllers
                 CategoryHome = db.Categories.Where(x => x.ShowHome == true && x.Status == true).ToList()
             };
             return View(model);
-            
+
         }
         public ActionResult Diagram()
         {
@@ -91,9 +91,22 @@ namespace TSB.Controllers
             };
             return View(model);
         }
-        public ActionResult category()
+        public ActionResult category(int catId)
         {
-            return View();
+            ViewBag.messenger = "Giới thiệu";
+            var category = db.Categories.Find(catId);
+            if (category == null)
+            {
+                return RedirectToAction("Index");
+            }
+            var article = db.Articles.Where(x => x.CategoryId == catId).OrderBy(x => x.CreateDate).ToList();
+            var model = new DetailsCategory
+            {
+                Category = category,
+                Articles = article,
+                CategoryHome = db.Categories.ToList()
+            };
+            return View(model);
         }
     }
 }

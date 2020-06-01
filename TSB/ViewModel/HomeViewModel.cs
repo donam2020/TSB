@@ -18,6 +18,8 @@ namespace TSB.ViewModel
     {
         public Category Category { get; set; }
         public IEnumerable <Article> Articles { get; set; }
+        public IEnumerable<Category> CategoryHome { get; set; }
+
     }
     public class aboutfotter
     {
@@ -25,4 +27,5 @@ namespace TSB.ViewModel
         public Config Config { get; set; }
         public IEnumerable <Baner> Baners { get; set; }
     }
+
 }

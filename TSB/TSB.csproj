@@ -1363,6 +1363,7 @@
     <Content Include="Views\Home\Introl.cshtml" />
     <Content Include="Views\Home\History.cshtml" />
     <Content Include="Views\Home\Diagram.cshtml" />
+    <Content Include="Views\Home\category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
