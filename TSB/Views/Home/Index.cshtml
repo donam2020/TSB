@@ -91,22 +91,24 @@
 <div id="baner">
     <div class="bg"></div>
     <div class="img"><img src="~/Content/img/baner/1.png" alt="" /></div>
-    <div class="text-baner">       
-            <div class="slogan">
-                <h2>TSB <br /> Total Solution Business</h2>
-            </div>
-            <div class="sumary">
-                <span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </span>
-            </div>
-            <div class="submit">
-                <button class="btn btn-default">Xem thêm</button>
-           </div>
-        
+    <div class="text-baner">
+        <div class="slogan">
+            <h2>TSB <br /> Total Solution Business</h2>
+        </div>
+        <div class="sumary">
+            <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </span>
+        </div>
+        <div class="submit">
+            <button class="btn btn-default">Xem thêm</button>
+        </div>
+
 
     </div>
+
+
 </div>
 <div id="introl">
     <div class="container">
@@ -161,270 +163,270 @@
 <div id="control">
     <div class="container">
         <ul>
-            @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Category && x.Category.ParentId == null))
-            {
-                <li>
-                    <div class="icon">
-                        <img src="@item.Image" alt="" />
-                    </div>
-                    <div class="text">
+            @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Category))           
+            {              
+                    <li>
+                        <div class="icon">
+                            <img src="@item.Image" alt="" />
+                        </div>
+                        <div class="text">
+                            <div class="title">
+                                @item.Name
+                            </div>
+                            <div class="content">
+                                @item.Sumary
+                            </div>
+                        </div>
+                        @*<div class="arrow-right">
+                                <i class="fal fa-chevron-right"></i>
+                            </div>*@
+                    </li>
+                    @*@for (int i = 0; i < 5; i++)
+                        {
+
+                        }*@
+                }
+            </ul>
+
+        </div>
+    </div>
+    <div id="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    @foreach (var baner in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Product))
+                    {
+                        <div class="img-ad">
+                            <img src="@baner.Image" alt="" />
+                        </div>
+                    }
+
+                </div>
+                <div class="col-sm-12 col-md-6 introl-left">
+                    @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Take(1))
+                    {
                         <div class="title">
-                            @item.Name
+                            <span>@item.Title</span>
+                            <h2>@item.Name</h2>
                         </div>
                         <div class="content">
-                            @item.Sumary
+                            <span>
+                                <b>@item.Sumary</b>
+                            </span>
+                            <ul>
+                                <li> <span>@Html.Raw(item.Content)</span></li>
+                                @*<li> <span>- Giải pháp điều khiển giám sát quản lí nhà máy SCADA</span></li>
+                                    <li> <span>- Giải pháp nâng cao chất lượng sản xuất </span></li>*@
+
+
+                            </ul>
                         </div>
-                    </div>
-                    @*<div class="arrow-right">
-                            <i class="fal fa-chevron-right"></i>
+                    }
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="news">
+        <div class="container">
+            <div class="bg">
+                <div class="title">
+                    <span>Tin tức của chúng tôi</span>
+                    <h2>Tin mới nhất</h2>
+                </div>
+                <div class="name">
+                    <span>Theo dõi các tin tức mới nhất của chúng tôi để cập nhập xu hướng thị trường và tận hưởng những ưu đãi một cách sớm nhất</span>
+                </div>
+
+                <div class="slider">
+                    @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Slider))
+                    {
+                        <div class="slick">
+
+
+                            <div class="img-avatar">
+                                <img src="@item.Image" alt="" />
+                            </div>
+                            <div class="title">
+                                <a href="">@item.Name</a>
+                            </div>
+                            <div class="sumary">
+                                <span>
+                                    @*@Html.Raw(item.Content)*@
+                                    @item.Sumary
+                                </span>
+                            </div>
+
+
+                            <div class="continu">
+                                <a href="">Xem thêm </a>
+                            </div>
+
+                        </div>
+                    }
+
+                    @*<div class="slick">
+
+                            <div class="img-avatar">
+                                <img src="~/Content/img/news/2.png" alt="" />
+                            </div>
+                            <div class="title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                            <div class="sumary">
+                                <span>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco...
+                                </span>
+                            </div>
+                            <div class="continu">
+                                <a href="">Xem thêm </a>
+                            </div>
+
+                        </div>
+                        <div class="slick">
+
+                            <div class="img-avatar">
+                                <img src="~/Content/img/news/3.png" alt="" />
+                            </div>
+                            <div class="title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                            <div class="sumary">
+                                <span>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco...
+                                </span>
+                            </div>
+                            <div class="continu">
+                                <a href="">Xem thêm </a>
+                            </div>
+
+                        </div>
+                        <div class="slick">
+
+                            <div class="img-avatar">
+                                <img src="~/Content/img/news/1.png" alt="" />
+                            </div>
+                            <div class="title">
+                                <a href="">Lorem ipsum dolor sit amet</a>
+                            </div>
+                            <div class="sumary">
+                                <span>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco...
+                                </span>
+                            </div>
+                            <div class="continu">
+                                <a href="">Xem thêm </a>
+                            </div>
+
                         </div>*@
-                </li>
-                @*@for (int i = 0; i < 5; i++)
+                </div>
+                <div class="arrow">
+                    <button class=" arrow-left"><i class="fas fa-angle-left"></i></button>
+                    <button class=" arrow-right"><i class="fas fa-angle-right"></i></button>
+                </div>
+            </div>
+            <div class="quotes">
+                <div class="icon">
+                    <img src="~/Content/img/icon/6.png" alt="" />
+                </div>
+                <div class="title">
+                    <h2>Nhận báo giá miễn phí cho cho các dự án bạn muốn thực hiện</h2>
+                    <span>Chúng tôi luôn mang đến dịch vụ chất lượng tốt với các biện pháp an toàn 100%.</span>
+                </div>
+                <div class="contact">
+                    <a href="@Url.Action("Create","Contact")">Liên hệ</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="customer">
+        <div class="container">
+            <div class="title">
+                <span>Đối tác của chúng tôi</span>
+                <h2>Đối tác tiêu biểu</h2>
+            </div>
+            <div class="slider-customer">
+                @foreach (var baner in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Partner))
+                {
+                    <a href=""><img src="@baner.Image" alt="Alternate Text" /></a>
+                }
+                @*@for (int i = 0; i < 6; i++)
                     {
 
                     }*@
-            }
-        </ul>
-
-    </div>
-</div>
-<div id="service">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                @foreach (var baner in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Product))
-                {
-                    <div class="img-ad">
-                        <img src="@baner.Image" alt="" />
-                    </div>
-                }
-
             </div>
-            <div class="col-sm-12 col-md-6 introl-left">
-                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Take(1))
-                {
-                    <div class="title">
-                        <span>@item.Title</span>
-                        <h2>@item.Name</h2>
-                    </div>
-                    <div class="content">
-                        <span>
-                            <b>@item.Sumary</b>
-                        </span>
-                        <ul>
-                            <li> <span>@Html.Raw(item.Content)</span></li>
-                            @*<li> <span>- Giải pháp điều khiển giám sát quản lí nhà máy SCADA</span></li>
-                                <li> <span>- Giải pháp nâng cao chất lượng sản xuất </span></li>*@
-
-
-                        </ul>
-                    </div>
-                }
-
-            </div>
-        </div>
-
-    </div>
-</div>
-<div id="news">
-    <div class="container">
-        <div class="bg">
-            <div class="title">
-                <span>Tin tức của chúng tôi</span>
-                <h2>Tin mới nhất</h2>
-            </div>
-            <div class="name">
-                <span>Theo dõi các tin tức mới nhất của chúng tôi để cập nhập xu hướng thị trường và tận hưởng những ưu đãi một cách sớm nhất</span>
-            </div>
-
-            <div class="slider">
-                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Slider))
-                {
-                    <div class="slick">
-
-
-                        <div class="img-avatar">
-                            <img src="@item.Image" alt="" />
-                        </div>
-                        <div class="title">
-                            <a href="">@item.Name</a>
-                        </div>
-                        <div class="sumary">
-                            <span>
-                                @*@Html.Raw(item.Content)*@
-                                @item.Sumary
-                            </span>
-                        </div>
-
-
-                        <div class="continu">
-                            <a href="">Xem thêm </a>
-                        </div>
-
-                    </div>
-                }
-
-                @*<div class="slick">
-
-                        <div class="img-avatar">
-                            <img src="~/Content/img/news/2.png" alt="" />
-                        </div>
-                        <div class="title">
-                            <a href="">Lorem ipsum dolor sit amet</a>
-                        </div>
-                        <div class="sumary">
-                            <span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco...
-                            </span>
-                        </div>
-                        <div class="continu">
-                            <a href="">Xem thêm </a>
-                        </div>
-
-                    </div>
-                    <div class="slick">
-
-                        <div class="img-avatar">
-                            <img src="~/Content/img/news/3.png" alt="" />
-                        </div>
-                        <div class="title">
-                            <a href="">Lorem ipsum dolor sit amet</a>
-                        </div>
-                        <div class="sumary">
-                            <span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco...
-                            </span>
-                        </div>
-                        <div class="continu">
-                            <a href="">Xem thêm </a>
-                        </div>
-
-                    </div>
-                    <div class="slick">
-
-                        <div class="img-avatar">
-                            <img src="~/Content/img/news/1.png" alt="" />
-                        </div>
-                        <div class="title">
-                            <a href="">Lorem ipsum dolor sit amet</a>
-                        </div>
-                        <div class="sumary">
-                            <span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco...
-                            </span>
-                        </div>
-                        <div class="continu">
-                            <a href="">Xem thêm </a>
-                        </div>
-
-                    </div>*@
-            </div>
-            <div class="arrow">
-                <button class=" arrow-left"><i class="fas fa-angle-left"></i></button>
-                <button class=" arrow-right"><i class="fas fa-angle-right"></i></button>
-            </div>
-        </div>
-        <div class="quotes">
-            <div class="icon">
-                <img src="~/Content/img/icon/6.png" alt="" />
-            </div>
-            <div class="title">
-                <h2>Nhận báo giá miễn phí cho cho các dự án bạn muốn thực hiện</h2>
-                <span>Chúng tôi luôn mang đến dịch vụ chất lượng tốt với các biện pháp an toàn 100%.</span>
-            </div>
-            <div class="contact">
-                <a href="@Url.Action("Create","Contact")">Liên hệ</a>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-<div id="customer">
-    <div class="container">
-        <div class="title">
-            <span>Đối tác của chúng tôi</span>
-            <h2>Đối tác tiêu biểu</h2>
-        </div>
-        <div class="slider-customer">
-            @foreach (var baner in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Partner))
-            {
-                <a href=""><img src="@baner.Image" alt="Alternate Text" /></a>
-            }
-            @*@for (int i = 0; i < 6; i++)
-                {
-
-                }*@
         </div>
     </div>
-</div>
-<div id="comment">
-    <div class="container">
-        <div class="bg">
-            <div class="title">
-                <span>Khách hàng nói gì về chúng tôi</span>
-                <h2>Nhận xét của khách hàng</h2>
-            </div>
-            <div class="slider-coment">
-                @foreach (var customer in Model.Customers.Skip(0).Take(2))
-                {
-                    <div class="">
+    <div id="comment">
+        <div class="container">
+            <div class="bg">
+                <div class="title">
+                    <span>Khách hàng nói gì về chúng tôi</span>
+                    <h2>Nhận xét của khách hàng</h2>
+                </div>
+                <div class="slider-coment">
+                    @foreach (var customer in Model.Customers.Skip(0).Take(2))
+                    {
+                        <div class="">
 
-                        <div class="avatar">
-                            <i class="fal fa-quote-left icon-left"></i>
-                            <img src="@customer.Image" alt="" />
-                            <i class="fal fa-quote-right icon-right"></i>
-                        </div>
-                        <div class="sumary">
-                            <span>
-                                @customer.Content
-                            </span>
-                        </div>
-                        <div class="info">
-                            <div class="name">
-                                @customer.Name
+                            <div class="avatar">
+                                <i class="fal fa-quote-left icon-left"></i>
+                                <img src="@customer.Image" alt="" />
+                                <i class="fal fa-quote-right icon-right"></i>
                             </div>
-                            <div class="addres">
-                                @customer.Addres
+                            <div class="sumary">
+                                <span>
+                                    @customer.Content
+                                </span>
+                            </div>
+                            <div class="info">
+                                <div class="name">
+                                    @customer.Name
+                                </div>
+                                <div class="addres">
+                                    @customer.Addres
+                                </div>
                             </div>
                         </div>
-                    </div>
-                }
-                @*<div class="">
-                        <div class="avatar">
-                            <i class="fal fa-quote-left icon-left"></i>
-                            <img src="~/Content/img/icon/7.png" alt="" />
-                            <i class="fal fa-quote-right icon-right"></i>
-                        </div>
-                        <div class="sumary">
-                            <span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </span>
-                        </div>
-                        <div class="info">
-                            <div class="name">
-                                James Shane Well
+                    }
+                    @*<div class="">
+                            <div class="avatar">
+                                <i class="fal fa-quote-left icon-left"></i>
+                                <img src="~/Content/img/icon/7.png" alt="" />
+                                <i class="fal fa-quote-right icon-right"></i>
                             </div>
-                            <div class="addres">
-                                California, USA
+                            <div class="sumary">
+                                <span>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </span>
                             </div>
-                        </div>
-                    </div>*@
+                            <div class="info">
+                                <div class="name">
+                                    James Shane Well
+                                </div>
+                                <div class="addres">
+                                    California, USA
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
             </div>
-        </div>
-        <div class="quotes">
-            <div class="title">
-                <h2>Nhận tin tức từ chúng tôi</h2>
-            </div>
-            <div class="email-contact">
-                <i class="fal fa-envelope"></i> <input type="text" value="" placeholder="Nhập địa chỉ email của bạn ......." />
-                <button type="submit">Nhận email</button>
+            <div class="quotes">
+                <div class="title">
+                    <h2>Nhận tin tức từ chúng tôi</h2>
+                </div>
+                <div class="email-contact">
+                    <i class="fal fa-envelope"></i> <input type="text" value="" placeholder="Nhập địa chỉ email của bạn ......." />
+                    <button type="submit">Nhận email</button>
+                </div>
             </div>
         </div>
     </div>
-</div>

@@ -49,7 +49,7 @@
                         @foreach (var childs in Model.Categories.Where(x => x.ParentId == category.Id))
                         {
                             <li>
-                                <a href="">@childs.Name</a>
+                                <a href="@Url.Action("category", "Home", new { catId = category.Id})">@childs.Name</a>
                             </li>
                         }
 
@@ -75,7 +75,7 @@
                             </li>
                             @foreach (var item in Model.Categories.Where(x => x.ParentId == null).Skip(2).Take(3))
                             {
-                                <li><a href="#">@item.Name</a></li>
+                                <li><a href="@Url.Action("category","Home", new { catId = item.Id})">@item.Name</a></li>
                                 @*<li>
                                     <a href="">Tin tức</a>
                                 </li>
