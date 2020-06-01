@@ -89,7 +89,8 @@ header .right a {
 }
 header .right a i {
   color: #DF6512;
-  font-size: 10px;
+  font-size: 12px;
+  margin-left: 5px;
 }
 .menu,
 footer {
