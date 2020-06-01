@@ -13,29 +13,28 @@
 
                 </div>
                 <div class="addres">
-                    @foreach (var item in Model.Config.Take(1))
-                    {
+                 
                         <h2>
-                            @Html.Raw(item.Name)
+                            @Html.Raw(Model.Config.Name)
                         </h2>
                         <ul>
                             <li class="loca">
-                                <i class="fal fa-map-marker-alt"></i>   Địa chỉ: @item.Addres
+                                <i class="fal fa-map-marker-alt"></i>   Địa chỉ: @Model.Config.Addres
 
                             </li>
                             <li>
-                                <i class="fad fa-phone-alt"></i> Điện thoại:  @item.Phone
+                                <i class="fad fa-phone-alt"></i> Điện thoại:  @Model.Config.Phone
 
                             </li>
                             <li>
                                 <i class="fad fa-print"></i>  Fax: +84(0)462800857
                             </li>
                             <li>
-                                <i class="fal fa-envelope"></i>Email:   @item.Email
+                                <i class="fal fa-envelope"></i>Email:   @Model.Config.Email
                             </li>
                         </ul>
 
-                    }
+                    
 
 
                 </div>

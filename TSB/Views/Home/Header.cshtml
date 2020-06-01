@@ -3,34 +3,33 @@
 
 
     <header>
-        @foreach (var item in Model.Configs.Take(1))
-        {
+
             <div class="left">
                 <div class="icon-follow">
                     <span>Follow us:</span>
                     <ul>
 
-                        <li><a href="@item.LinkTwichter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="@Model.Configs.LinkTwichter"><i class="fab fa-twitter"></i></a></li>
 
-                        <li><a href="@item.LinkGoogle"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="@Model.Configs.LinkGoogle"><i class="fab fa-google-plus-g"></i></a></li>
 
-                        <li><a href="@item.LinkFacebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="@Model.Configs.LinkFacebook"><i class="fab fa-facebook-f"></i></a></li>
 
-                        <li><a href="@item.LinkYoutube"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="@Model.Configs.LinkYoutube"><i class="fab fa-youtube"></i></a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="right">
                 <div class="phone">
-                    <a href="">@item.Phone <i class="fa fa-phone-alt"></i></a>
+                    <a href="">@Model.Configs.Phone <i class="fa fa-phone-alt"></i></a>
                 </div>
                 <div class="mail">
-                    <a href=" info@tsb-hn.com"> @item.Email <i class="fad fa-envelope"></i></a>
+                    <a href=" info@tsb-hn.com"> @Model.Configs.Email <i class="fad fa-envelope"></i></a>
                 </div>
 
             </div>
-        }
+   
 
     </header>
 <div class="menu">

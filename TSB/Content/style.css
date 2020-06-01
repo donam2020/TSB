@@ -184,6 +184,12 @@ footer .header-bottom .nav-menu ul li a {
   font-weight: normal;
   margin-bottom: 30px;
 }
+#baner button {
+  background: #DF6512;
+  border: none;
+  color: #fff;
+  padding: 10px 30px;
+}
 #baner button:hover {
   background: #14488B;
   transition: all 1s;

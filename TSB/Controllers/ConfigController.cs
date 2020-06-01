@@ -26,6 +26,8 @@ namespace TSB.Controllers
         {
             if (ModelState.IsValid)
             {
+                config.CreateDate = DateTime.Now;
+                config.CreateBy = User.Identity.Name;
                 _config.Create(config);
                 return RedirectToAction("Index");
             }
