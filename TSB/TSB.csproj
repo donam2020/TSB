@@ -1364,6 +1364,7 @@
     <Content Include="Views\Home\History.cshtml" />
     <Content Include="Views\Home\Diagram.cshtml" />
     <Content Include="Views\Home\category.cshtml" />
+    <Content Include="Views\Home\Customer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,106 +4,148 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@{
+    if (Model.Category.TypeShow == TSB.Entites.TyShow.Article)
+    {
+        <div class="container contact">
+            <div class="row">
+                <div class="col-xs-12 col-md-10 ">
+                    <h2 style="text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span> @Model.Category.Name</span></h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td scope="col" class="td-30">Tên công ty</td>
+                                <td scope="col" class="td-70">
+                                    Công ty TNHH TSB
+                                </td>
 
-@foreach (var item in Model.CategoryHome.Where(x => x.TypeShow == TSB.Entites.TyShow.Article && x.ParentId != null).Skip(1).Take(1))
-{
-    <div class="container contact">
-        <div class="row">
-            <div class="col-xs-12 col-md-10 ">
-                <h2 style="text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span>@*GIỚI THIỆU CÔNG TY*@ @item.Name</span></h2>
-                @*<table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <td scope="col" class="td-30">Tên công ty</td>
-                            <td scope="col" class="td-70">
-                                Công ty TNHH TSB
-                            </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row" class="td-30">CEO/Representative	</td>
+                                <td scope="col" class="td-70">
+                                    Isamu Kaburagi
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="td-30">
+                                    Sơ lược Hoạt động kinh doanh
+                                </td>
+                                <td scope="col" class="td-70">
+                                    <p> Nhập khẩu và Xuất khẩu linh kiện điện, bán ra thị trường nội địa</p>
+                                    <p>
+                                        Nhập khẩu và Xuất khẩu linh kiện điện tử như cổng kết nối, cáp kết nối, bán ra thị trường nội địa
+                                    </p>
+                                    <p>
+                                        Nhập khẩu và Xuất khẩu máy móc sản xuất linh kiện điên tử như cổng kết nối, cáp kết nối, bán ra thị trường nội địa
+                                    </p>
+                                    <p>
+                                        Kinh doanh Giải pháp Sinh thái
+                                    </p>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="row" class="td-30">CEO/Representative	</td>
-                            <td scope="col" class="td-70">
-                                Isamu Kaburagi
-                            </td>
-                        </tr>
-                        <tr>
-                            <td scope="row" class="td-30">
-                                Sơ lược Hoạt động kinh doanh
-                            </td>
-                            <td scope="col" class="td-70">
-                                <p> Nhập khẩu và Xuất khẩu linh kiện điện, bán ra thị trường nội địa</p>
-                                <p>
-                                    Nhập khẩu và Xuất khẩu linh kiện điện tử như cổng kết nối, cáp kết nối, bán ra thị trường nội địa
-                                </p>
-                                <p>
-                                    Nhập khẩu và Xuất khẩu máy móc sản xuất linh kiện điên tử như cổng kết nối, cáp kết nối, bán ra thị trường nội địa
-                                </p>
-                                <p>
-                                    Kinh doanh Giải pháp Sinh thái
-                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-30"> Thành lập</td>
+                                <td class="td-70">
+                                    Sept. 1996
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-30">
+                                    Vốn đầu tư
+                                </td>
+                                <td class="td-70">
+                                    <p>
+                                        US$990,000 （Domestic- Nội địa）,US$1,800,000（Overseas- Nước ngoài）
+                                    </p>
+                                    <p>
+                                        US$2,800,000（TSB Group-Tập đoàn TSB）
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-30">
+                                    Nhân viên
+                                </td>
+                                <td class="td-70">
+                                    45（Domestic- Nội địa）、450名（Including Overseas- bao gồm nước ngoài）
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="td-30"> Thành lập</td>
-                            <td class="td-70">
-                                Sept. 1996
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="td-30">
-                                Vốn đầu tư
-                            </td>
-                            <td class="td-70">
-                                <p>
-                                    US$990,000 （Domestic- Nội địa）,US$1,800,000（Overseas- Nước ngoài）
-                                </p>
-                                <p>
-                                    US$2,800,000（TSB Group-Tập đoàn TSB）
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="td-30">
-                                Nhân viên
-                            </td>
-                            <td class="td-70">
-                                45（Domestic- Nội địa）、450名（Including Overseas- bao gồm nước ngoài）
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="td-30">Doanh thu hàng năm</td>
-                            <td class="td-70">
-                                US$73Million（2013）
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>*@
-            </div>
-            <div class="col-xs-12 col-md-2 p-0">
-                <ul>
-                    @foreach (var category in Model.CategoryHome.Where(x => x.ParentId == null).Skip(1).Take(1))
-                    {
-                        <li class="action">@category.Name</li>
-                        foreach (var childs in Model.CategoryHome.Where(x => x.ParentId == category.Id))
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-30">Doanh thu hàng năm</td>
+                                <td class="td-70">
+                                    US$73Million（2013）
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-md-2 p-0">
+                    <ul>
+                        @foreach (var category in Model.CategoryHome.Where(x => x.ParentId == null).Skip(1).Take(1))
                         {
-                            <li><a href="@Url.Action("category","Home",new { catID = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
+                            <li class="action">@category.Name</li>
+                            foreach (var childs in Model.CategoryHome.Where(x => x.ParentId == category.Id))
+                            {
+                                <li><a href="@Url.Action("category","Home",new { catID = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
+
+                            }
 
                         }
 
-                    }
+                    </ul>
 
-                </ul>
-
+                </div>
             </div>
         </div>
+    }
+    else if (Model.Category.TypeShow == TSB.Entites.TyShow.Slider )
+    {
+        <div class="container contact">
+            <h2 style="text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span>@Model.Category.Name</span></h2>
+            <table class="table table-striped">
+                <tbody>
+                    @*@for (int i = 0; i < 6; i++)
+        {
+            <tr>
+                <td><img src="~/Content/img/customer/1.png" alt="Alternate Text" /></td>
+                <td><img src="~/Content/img/customer/2.png" alt="Alternate Text" /></td>
+            </tr>
+        }*@
+                    @foreach (var item in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Partner))
+                    {
+                        <tr>
+                            <td><img src="@item.Image" alt="Alternate Text" /></td>
+                            <td><img src="@item.Image" alt="Alternate Text" /></td>
+                        </tr>
+                    }
 
-
-
-
-
-    </div>
+                    @*<tr>
+                        <td><img src="~/Content/img/customer/3.png" alt="Alternate Text" /></td>
+                        <td><img src="~/Content/img/customer/4.png" alt="Alternate Text" /></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/Content/img/customer/5.png" alt="Alternate Text" /></td>
+                        <td><img src="~/Content/img/customer/6.png" alt="Alternate Text" /></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/Content/img/customer/7.png" alt="Alternate Text" /></td>
+                        <td><img src="~/Content/img/customer/8.png" alt="Alternate Text" /></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/Content/img/customer/9.png" alt="Alternate Text" /></td>
+                        <td><img src="~/Content/img/customer/10.png" alt="Alternate Text" /></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/Content/img/customer/11.png" alt="Alternate Text" /></td>
+                        <td><img src="~/Content/img/customer/12.gif" alt="Alternate Text" /></td>
+                    </tr>*@
+                </tbody>
+            </table>
+        </div>
+    }
 }
+

@@ -17,6 +17,7 @@ namespace TSB.ViewModel
     public class DetailsCategory
     {
         public Category Category { get; set; }
+        public IEnumerable <Baner> Baners { get; set; }
         public IEnumerable <Article> Articles { get; set; }
         public IEnumerable<Category> CategoryHome { get; set; }
 

@@ -91,6 +91,10 @@ namespace TSB.Controllers
             };
             return View(model);
         }
+        public ActionResult Customer()
+        {            
+            return View();
+        }
         public ActionResult category(int catId)
         {
             ViewBag.messenger = "Giới thiệu";
@@ -102,12 +106,13 @@ namespace TSB.Controllers
             var article = db.Articles.Where(x => x.CategoryId == catId).OrderBy(x => x.CreateDate).ToList();
             var model = new DetailsCategory
             {
+                Baners = db.Baners.ToList(),
                 Category = category,
                 Articles = article,
                 CategoryHome = db.Categories.ToList()
             };
             return View(model);
         }
-
+      
     }
 }
