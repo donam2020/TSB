@@ -387,7 +387,7 @@ footer .header-bottom .nav-menu ul li a {
   transform: translate(10px, 50%);
 }
 #service .content {
-  transform: translate(0px, 60px);
+  transform: translate(0px, 35px);
   line-height: 35px;
 }
 #service .content ul {

@@ -27,6 +27,7 @@ namespace TSB.ViewModel
         public IEnumerable<Category> Categories { get; set; }
         public Config Config { get; set; }
         public IEnumerable <Baner> Baners { get; set; }
+        public IEnumerable<Article> Articles { get; set; }
     }
 
 }

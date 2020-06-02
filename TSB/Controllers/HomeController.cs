@@ -92,7 +92,7 @@ namespace TSB.Controllers
             return View(model);
         }
         public ActionResult Customer()
-        {            
+        {
             return View();
         }
         public ActionResult category(int catId)
@@ -113,6 +113,10 @@ namespace TSB.Controllers
             };
             return View(model);
         }
-      
+        public ActionResult Details(int id)
+        {
+            var details = db.Articles.FirstOrDefault(x=>x.Id == id);
+              return View(details);
+        }
     }
 }
