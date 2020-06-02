@@ -709,15 +709,16 @@ button:focus {
   font-weight: 500;
 }
 .contact .text-content {
-  display: flex;
-  flex-direction: column;
+  padding: 20px 0;
 }
 .contact .text-content .img {
   width: 377px;
+  height: 507px;
   margin: 20px auto;
+  float: left;
 }
 .contact .text-content .img img {
-  width: 100%;
+  width: 50%;
 }
 .contact .text-content .content {
   font-size: 16px;
