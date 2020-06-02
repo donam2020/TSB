@@ -13,6 +13,7 @@ namespace TSB.ViewModel
         public IEnumerable <Category> CategoryHome { get; set; }
         public IEnumerable <Contact> Contacts { get; set; }
         public IEnumerable<Customer> Customers { get; set; }
+        public IEnumerable <Category> Categories { get; set; }
     }
     public class DetailsCategory
     {

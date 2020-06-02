@@ -327,22 +327,6 @@ footer .header-bottom .nav-menu ul li a {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  /*.arrow-right {
-            text-align: center;
-            border-radius: 50%;
-            background: #FFFFFF;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
-            width: 40px;
-            height: 40px;
-            margin: auto;
-            padding: 10px;
-            position: absolute;
-            transform: translate(80px, -20px);
-
-            i {
-                color: @cl-d;
-            }
-        }*/
 }
 #control ul .text {
   padding: 10px 20px;
@@ -354,6 +338,9 @@ footer .header-bottom .nav-menu ul li a {
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
+}
+#control ul .title a {
+  text-decoration: none;
 }
 #control ul .content {
   font-size: 14px;
@@ -720,6 +707,28 @@ button:focus {
   padding: 5px 5px;
   text-transform: uppercase;
   font-weight: 500;
+}
+.contact .text-content {
+  display: flex;
+  flex-direction: column;
+}
+.contact .text-content .img {
+  width: 377px;
+  margin: 20px auto;
+}
+.contact .text-content .img img {
+  width: 100%;
+}
+.contact .text-content .content {
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 500;
+  font-weight: normal;
+}
+.contact .title {
+  font-size: 220%;
+  font-weight: bold;
+  text-align: center;
 }
 @media only screen and (max-width: 600px) {
   header {

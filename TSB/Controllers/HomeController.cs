@@ -113,10 +113,22 @@ namespace TSB.Controllers
             };
             return View(model);
         }
-        public ActionResult Details(int id)
+        public ActionResult Details(int  id)
         {
-            var details = db.Articles.FirstOrDefault(x=>x.Id == id);
-              return View(details);
+            var article = db.Articles.Find(id);
+            if(article == null)
+            {
+                return RedirectToAction("Index");
+            }
+            var ar = db.Articles.Where(x => x.Id == id);
+            var model = new HomeViewModel
+            {
+                Articles = ar,
+                CategoryHome = db.Categories.ToList(),
+               
+                
+            };
+              return View(model);
         }
     }
 }

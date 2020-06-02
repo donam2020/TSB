@@ -119,35 +119,29 @@
                         }*@
                     @foreach (var item in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Partner))
                     {
-                        <tr>                           
-                                <td><img src="@item.Image" alt="Alternate Text" /></td>                          
-                                <td><img src="@item.Image" alt="Alternate Text" /></td>                         
+                        <tr>
+                            <td><img src="@item.Image" alt="Alternate Text" /></td>
+                            <td><img src="@item.Image" alt="Alternate Text" /></td>
 
                         </tr>
                     }
-
-                    @*<tr>
-                            <td><img src="~/Content/img/customer/3.png" alt="Alternate Text" /></td>
-                            <td><img src="~/Content/img/customer/4.png" alt="Alternate Text" /></td>
-                        </tr>
-                        <tr>
-                            <td><img src="~/Content/img/customer/5.png" alt="Alternate Text" /></td>
-                            <td><img src="~/Content/img/customer/6.png" alt="Alternate Text" /></td>
-                        </tr>
-                        <tr>
-                            <td><img src="~/Content/img/customer/7.png" alt="Alternate Text" /></td>
-                            <td><img src="~/Content/img/customer/8.png" alt="Alternate Text" /></td>
-                        </tr>
-                        <tr>
-                            <td><img src="~/Content/img/customer/9.png" alt="Alternate Text" /></td>
-                            <td><img src="~/Content/img/customer/10.png" alt="Alternate Text" /></td>
-                        </tr>
-                        <tr>
-                            <td><img src="~/Content/img/customer/11.png" alt="Alternate Text" /></td>
-                            <td><img src="~/Content/img/customer/12.gif" alt="Alternate Text" /></td>
-                        </tr>*@
                 </tbody>
             </table>
+        </div>
+    }
+    else if (Model.Category.TypeShow == TSB.Entites.TyShow.Tuyendung)
+    {
+        <div class="container contact">          
+         <h2 style="text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span> @Model.Category.Name</span></h2>
+         <div class="text">
+             @foreach (var item in Model.Articles.Where(x=>x.ShowHome == true).Skip(1))
+             {
+                 <div class="title">@item.Title</div>
+                 <div class="text">
+                     @Html.Raw(item.Content)
+                 </div>
+             }
+         </div>
         </div>
     }
 }

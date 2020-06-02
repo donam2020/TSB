@@ -220,16 +220,18 @@ header {
             margin-bottom: 30px;
         }
     }
-    button{
-        background:@cl-d;
-        border:none;
-        color:@cl-w;
-        padding:10px 30px;
-        &:hover{
-            background:@cl-14;
+
+    button {
+        background: @cl-d;
+        border: none;
+        color: @cl-w;
+        padding: 10px 30px;
+
+        &:hover {
+            background: @cl-14;
             .tran;
-            color:@cl-w;
-            border:none;
+            color: @cl-w;
+            border: none;
         }
     }
 }
@@ -306,10 +308,9 @@ header {
 #control {
     .icon {
         width: 61.15px;
-        height:61.15px;
+        height: 61.15px;
         margin: auto;
-      
-        margin-bottom:10px;
+        margin-bottom: 10px;
     }
 
     img {
@@ -332,12 +333,14 @@ header {
             font-weight: 600;
             font-size: 16px;
             line-height: 20px;
+            a{
+                text-decoration:none;
+            }
         }
 
         .content {
             font-size: 14px;
             line-height: 19px;
-           
             padding: 10px 12px 40px;
         }
 
@@ -368,23 +371,7 @@ header {
                 }
             }
         }
-
-        /*.arrow-right {
-            text-align: center;
-            border-radius: 50%;
-            background: #FFFFFF;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
-            width: 40px;
-            height: 40px;
-            margin: auto;
-            padding: 10px;
-            position: absolute;
-            transform: translate(80px, -20px);
-
-            i {
-                color: @cl-d;
-            }
-        }*/
+       
     }
 }
 
@@ -482,8 +469,9 @@ header {
 
         .slick {
             padding-right: 20px;
-            &:focus{
-                outline:none;
+
+            &:focus {
+                outline: none;
             }
         }
     }
@@ -496,7 +484,6 @@ header {
         .arrow-left, .arrow-right {
             background: none;
             border: none;
-            
         }
 
         .arrow-left {
@@ -553,7 +540,6 @@ header {
     .title {
         text-align: center;
     }
-
 }
 
 #comment {
@@ -672,7 +658,8 @@ footer {
 
             a {
                 color: @cl-0;
-                line-height: 36px;                
+                line-height: 36px;
+
                 &:hover {
                     padding-left: 5px;
                     .tran;
@@ -702,9 +689,11 @@ footer {
 /*Contact*/
 .contact {
     color: #673915;
-    i{
-        margin-right:10px;
+
+    i {
+        margin-right: 10px;
     }
+
     h2 {
         background: @cl-w;
         font-size: 100%;
@@ -712,7 +701,6 @@ footer {
     }
 
     form {
-       
         padding: 15px;
     }
 
@@ -722,32 +710,34 @@ footer {
         padding: 5px 0 !important;
     }
 }
-.slick-slide,input,button{
-    &:focus{
-        outline:none;
+
+.slick-slide, input, button {
+    &:focus {
+        outline: none;
     }
 }
 /*introl*/
 .p-0 {
     padding: 0;
 }
+
 .contact {
-   
+
     .table-striped {
         border: 2px solid #bbe0e3;
 
         td {
             border: 2px solid #bbe0e3;
-            vertical-align:middle;
-            img{
-                width:40%;
+            vertical-align: middle;
+
+            img {
+                width: 40%;
             }
         }
     }
 
     .td-30 {
         width: 30%;
-        
     }
 
     .td-70 {
@@ -757,29 +747,57 @@ footer {
 
     ul {
         list-style: none;
-        li{
-            border-bottom:1px solid #999;
-            padding:10px 10px;
-            a{
-                color:#393939;
-                text-decoration:none;
-                &:hover{
-                    color:@cl-14;
+
+        li {
+            border-bottom: 1px solid #999;
+            padding: 10px 10px;
+
+            a {
+                color: #393939;
+                text-decoration: none;
+
+                &:hover {
+                    color: @cl-14;
                     .tran;
                 }
             }
-           
         }
-      }
-    .action{
-        background:@cl-14;
-        color:@cl-w;
-        padding:5px 5px;
-        text-transform:uppercase;
-        font-weight:500;
     }
- 
+
+    .action {
+        background: @cl-14;
+        color: @cl-w;
+        padding: 5px 5px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .text-content {
+        display: flex;
+        flex-direction: column;
+
+        .img {
+            width: 377px;
+            margin: 20px auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content {
+            .font-f;
+            font-weight: normal;
+        }
+    }
+
+    .title {
+        font-size: 220%;
+        font-weight: bold;
+        text-align: center;
+    }
 }
+
 @media only screen and (max-width: 600px) {
     header {
         display: none;
