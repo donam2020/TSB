@@ -240,7 +240,7 @@
                 </div>
 
                 <div class="slider">
-                    @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Slider))
+                    @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Skip(2))
                     {
                         <div class="slick">
 

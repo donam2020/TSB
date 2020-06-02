@@ -682,25 +682,18 @@ button:focus {
 .p-0 {
   padding: 0;
 }
-.contact td {
-  text-align: center;
-  background: #fff;
-  width: 50%;
-  vertical-align: unset !important;
-  padding: 0 !important;
-}
 .contact .table-striped {
   border: 2px solid #bbe0e3;
 }
 .contact .table-striped td {
   border: 2px solid #bbe0e3;
+  vertical-align: middle;
 }
 .contact .table-striped td img {
   width: 40%;
 }
 .contact .td-30 {
   width: 30%;
-  padding: 10px 10px;
 }
 .contact .td-70 {
   width: 70%;
