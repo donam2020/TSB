@@ -16,7 +16,7 @@ namespace TSB.Repository
         public Category Getone(int id)
         {
             return db.Categories.FirstOrDefault(x => x.Id == id);
-        }
+        }       
         public bool Create( Category cate)
         {
             cate.CreateDate = DateTime.Now;
@@ -24,6 +24,7 @@ namespace TSB.Repository
             var res = db.SaveChanges();
             return res > 0;
         }
+
         public Category Update(Category cate)
         {
             var update = db.Categories.FirstOrDefault(x => x.Id == cate.Id);
