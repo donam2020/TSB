@@ -712,6 +712,7 @@ button:focus {
   padding: 20px 0;
 }
 .contact .text-content .img {
+  text-align: center;
   margin: 20px auto;
   padding: 10px;
 }

@@ -25,18 +25,7 @@ namespace TSB.Controllers
             return View(model);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-            return View();
-        }
+       
         public PartialViewResult Header()
         {
             var catagory = db.Categories;
