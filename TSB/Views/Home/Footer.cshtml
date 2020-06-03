@@ -42,7 +42,7 @@
                         @foreach (var childs in Model.Categories.Where(x => x.ParentId == category.Id))
                         {
                             <li>
-                                <a href="@Url.Action("Details", "Home", new { id = childs.Id})">@childs.Name</a>
+                                <a href="@Url.Action("Details", "Home", new { catid = childs.Id})">@childs.Name</a>
                             </li>
                         }
                        
