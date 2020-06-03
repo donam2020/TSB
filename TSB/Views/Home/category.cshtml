@@ -90,7 +90,7 @@
                             <li class="action">@category.Name</li>
                             foreach (var childs in Model.CategoryHome.Where(x => x.ParentId == category.Id))
                             {
-                                <li><a href="@Url.Action("category","Home",new { catID = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
+                                <li><a href="@Url.Action("category","Home",new { catid= childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
 
                             }
 
@@ -104,45 +104,117 @@
     }
     else if (Model.Category.TypeShow == TSB.Entites.TyShow.Slider)
     {
-        var i = 1;
-        <div class="container contact">
-            <h2 style="text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span>@Model.Category.Name</span></h2>
-            <table class="table table-striped">
-                <tbody>
-                    @*@for (int i = 0; i < 6; i++)
+        <div id="news">
+            <div class="container">
+                <div class="bg">
+                    <div class="title">
+                        <span>Tin tức của chúng tôi</span>
+                        <h2>Tin mới nhất</h2>
+                    </div>
+                    <div class="name">
+                        <span>Theo dõi các tin tức mới nhất của chúng tôi để cập nhập xu hướng thị trường và tận hưởng những ưu đãi một cách sớm nhất</span>
+                    </div>
+
+                    <div class="slider">
+                        @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Slider))
                         {
-                            <tr>
-                                <td><img src="~/Content/img/customer/1.png" alt="Alternate Text" /></td>
-                                <td><img src="~/Content/img/customer/2.png" alt="Alternate Text" /></td>
-                            </tr>
+                            <div class="slick">
+                                <div class="img-avatar">
+                                    <img src="@item.Image" alt="" />
+                                </div>
+                                <div class="title">
+                                    <a href="@Url.Action("Details","Home",new { id = item.Id})">@item.Name</a>
+                                </div>
+                                <div class="sumary">
+                                    <span>
+                                        @*@Html.Raw(item.Content)*@
+                                        @item.Sumary
+                                    </span>
+                                </div>
 
-                        }*@
-                    @foreach (var item in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Partner))
-                    {
-                        <tr>
-                            <td><img src="@item.Image" alt="Alternate Text" /></td>
-                            <td><img src="@item.Image" alt="Alternate Text" /></td>
 
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                                <div class="continu">
+                                    <a href="">Xem thêm </a>
+                                </div>
+
+                            </div>
+                        }
+
+
+                    </div>
+                    <div class="arrow">
+                        <button class=" arrow-left"><i class="fas fa-angle-left"></i></button>
+                        <button class=" arrow-right"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                </div>
+                <div class="quotes">
+                    <div class="icon">
+                        <img src="~/Content/img/icon/6.png" alt="" />
+                    </div>
+                    <div class="title">
+                        <h2>Nhận báo giá miễn phí cho cho các dự án bạn muốn thực hiện</h2>
+                        <span>Chúng tôi luôn mang đến dịch vụ chất lượng tốt với các biện pháp an toàn 100%.</span>
+                    </div>
+                    <div class="contact">
+                        <a href="@Url.Action("Create","Contact")">Liên hệ</a>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     }
     else if (Model.Category.TypeShow == TSB.Entites.TyShow.Tuyendung)
     {
-        <div class="container contact">          
-         <h2 style="text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span> @Model.Category.Name</span></h2>
-         <div class="text">
-             @foreach (var item in Model.Articles.Where(x=>x.ShowHome == true).Skip(1))
-             {
-                 <div class="title">@item.Title</div>
-                 <div class="text">
-                     @Html.Raw(item.Content)
-                 </div>
-             }
-         </div>
+
+        <div class="container contact">
+            <h2 style="text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span> @Model.Category.Name</span></h2>
+            <div class="text">
+                @foreach (var item in Model.Articles.Where(x => x.ShowHome == true).Skip(1))
+                {
+                    <div class="title">@item.Title</div>
+                    <div class="text">
+                        @Html.Raw(item.Content)
+                    </div>
+                }
+            </div>
         </div>
     }
 }
 
+@section scripts{
+    <script>
+        $('.slider').slick({
+            autoplaySpeed: true,
+            arrows: true,
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            infinite: true,
+            slidesToShow: 3,
+            prevArrow: ".arrow-left",
+            nextArrow: ".arrow-right",
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false
+                    }
+                },
+
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+
+            ]
+        });
+
+    </script>
+}

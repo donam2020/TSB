@@ -65,7 +65,7 @@
                     <li><a href="/" class="action"><i class="fal fa-home-lg-alt"></i>  Trang Chủ</a></li>
                     @foreach (var category in Model.CategoryHome.Where(x => x.ParentId == null).Take(5))
                     {
-                        <li><a href="@Url.Action("category", "Home", new { catId = category.Id})">@category.Name</a></li>
+                        <li><a href="@Url.Action("category", "Home", new { catid = category.Id})">@category.Name</a></li>
                     }
 
                     @*<li><a href="">Sản phẩm & giải pháp</a></li>

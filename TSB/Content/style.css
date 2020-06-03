@@ -716,6 +716,7 @@ button:focus {
   height: 507px;
   margin: 20px auto;
   float: left;
+  padding: 10px;
 }
 .contact .text-content .img img {
   width: 50%;
@@ -730,6 +731,9 @@ button:focus {
   font-size: 220%;
   font-weight: bold;
   text-align: center;
+}
+.contact .img img {
+  width: 100%;
 }
 @media only screen and (max-width: 600px) {
   header {

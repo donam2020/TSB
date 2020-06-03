@@ -25,7 +25,18 @@ namespace TSB.Controllers
             return View(model);
         }
 
-      
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
         public PartialViewResult Header()
         {
             var catagory = db.Categories;
@@ -37,7 +48,18 @@ namespace TSB.Controllers
             };
             return PartialView(model);
         }
-       
+        public PartialViewResult Footer()
+        {
+            var category = db.Categories.ToList();           
+            var model = new aboutfotter
+            {
+                Articles = db.Articles.ToList(),
+                Categories = category,
+                Baners = db.Baners.OrderByDescending(x => x.CreateDate),
+                Config = db.Configs.FirstOrDefault()
+            };
+            return PartialView(model);
+        }
 
         public ActionResult Introl()
         {
@@ -73,27 +95,15 @@ namespace TSB.Controllers
         {
             return View();
         }
-        public PartialViewResult Footer()
-        {
-            var category = db.Categories.ToList();
-            var model = new aboutfotter
-            {
-                Articles = db.Articles.ToList(),
-                Categories = category,
-                Baners = db.Baners.OrderByDescending(x => x.CreateDate),
-                Config = db.Configs.FirstOrDefault()
-            };
-            return PartialView(model);
-        }
-        public ActionResult category(int catId)
+        public ActionResult category(int catid)
         {
             ViewBag.messenger = "Giới thiệu";
-            var category = db.Categories.Find(catId);
+            var category = db.Categories.Find(catid);
             if (category == null)
             {
                 return RedirectToAction("Index");
             }
-            var article = db.Articles.Where(x => x.CategoryId == catId).OrderBy(x => x.CreateDate).ToList();
+            var article = db.Articles.Where(x => x.CategoryId == catid).OrderBy(x => x.CreateDate).ToList();
             var model = new DetailsCategory
             {
                 Baners = db.Baners.ToList(),
@@ -103,14 +113,14 @@ namespace TSB.Controllers
             };
             return View(model);
         }
-        public ActionResult Details(int catid)
+        public ActionResult Details(int id)
         {
-            var article = db.Articles.Find(catid);
+            var article = db.Articles.Find(id);
             //if(article == null)
             //{
             //    return RedirectToAction("Index");
             //}
-            var ar = db.Articles.Where(x => x.CategoryId == catid);
+            var ar = db.Articles.Where(x =>x.CategoryId == id);
             var model = new HomeViewModel
             {
                 Articles = ar,

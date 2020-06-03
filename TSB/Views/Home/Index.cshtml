@@ -240,7 +240,7 @@
             </div>
 
             <div class="slider">
-                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Skip(2))
+                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Slider))
                 {
                     <div class="slick">
 
@@ -266,63 +266,7 @@
                     </div>
                 }
 
-                @*<div class="slick">
-
-                        <div class="img-avatar">
-                            <img src="~/Content/img/news/2.png" alt="" />
-                        </div>
-                        <div class="title">
-                            <a href="">Lorem ipsum dolor sit amet</a>
-                        </div>
-                        <div class="sumary">
-                            <span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco...
-                            </span>
-                        </div>
-                        <div class="continu">
-                            <a href="">Xem thêm </a>
-                        </div>
-
-                    </div>
-                    <div class="slick">
-
-                        <div class="img-avatar">
-                            <img src="~/Content/img/news/3.png" alt="" />
-                        </div>
-                        <div class="title">
-                            <a href="">Lorem ipsum dolor sit amet</a>
-                        </div>
-                        <div class="sumary">
-                            <span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco...
-                            </span>
-                        </div>
-                        <div class="continu">
-                            <a href="">Xem thêm </a>
-                        </div>
-
-                    </div>
-                    <div class="slick">
-
-                        <div class="img-avatar">
-                            <img src="~/Content/img/news/1.png" alt="" />
-                        </div>
-                        <div class="title">
-                            <a href="">Lorem ipsum dolor sit amet</a>
-                        </div>
-                        <div class="sumary">
-                            <span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco...
-                            </span>
-                        </div>
-                        <div class="continu">
-                            <a href="">Xem thêm </a>
-                        </div>
-
-                    </div>*@
+            
             </div>
             <div class="arrow">
                 <button class=" arrow-left"><i class="fas fa-angle-left"></i></button>
