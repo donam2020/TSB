@@ -3,44 +3,31 @@
     ViewBag.Title = "Thông tin ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="container contact">
     <div class="row">
-        <div class="col-xs-12 col-md-10 ">
-            @foreach (var category in Model.Articles.Where(x=>x.Status == true).Take(1))
-            {
-                <h2 style=" text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span>@category.Name</span></h2>
+        <div class="col-xs-12 col-md-10 ">           
+                <h2 style=" text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span>@Model.Article.Category.Name</span></h2>
                 <div class="text-content">
                     <div class="img">
-                        <img src="@category.Image" alt="" />
+                        <img src="@Model.Article.Image" alt="" />
                     </div>
                     <div class="content">
-                        @Html.Raw(category.Content)
+                        @Html.Raw(Model.Article.Content)
                     </div>
-                </div>         
-               
-            }
+                </div>  
         </div>
         <div class="col-xs-12 col-md-2 p-0">
             <ul>
                 @foreach (var category in Model.CategoryHome.Where(x =>x.ParentId == null).Take(1))
                 {
                     <li class="action">@category.Name</li>
-                    foreach (var childs in Model.CategoryHome.Where(x =>x.ParentId == category.Id))
+                    foreach (var childs in Model.Articles.Where(x =>x.Category.ParentId == category.Id))
                     {
-                        <li><a href="@Url.Action("Details","Home",new { id = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
+                        <li><a href="@Url.Action("Details","Home",new { id = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Category.Name</a></li>
                     }
-
                 }
-
             </ul>
-
         </div>
     </div>
-
-
-
-
-
 </div>
 

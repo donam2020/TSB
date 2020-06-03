@@ -14,6 +14,7 @@ namespace TSB.ViewModel
         public IEnumerable <Contact> Contacts { get; set; }
         public IEnumerable<Customer> Customers { get; set; }
         public IEnumerable <Category> Categories { get; set; }
+        public Article Article { get; set; }
     }
     public class DetailsCategory
     {

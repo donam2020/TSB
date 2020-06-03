@@ -39,10 +39,10 @@
                         @category.Name
                     </div>
                     <ul>
-                        @foreach (var childs in Model.Categories.Where(x => x.ParentId == category.Id))
+                        @foreach (var childs in Model.Articles.Where(x => x.Category.ParentId == category.Id))
                         {
                             <li>
-                                <a href="@Url.Action("Details", "Home", new { id = childs.Id})">@childs.Name</a>
+                                <a href="@Url.Action("Details", "Home", new { id = childs.Id})">@childs.Category.Name</a>
                             </li>
                         }
                        

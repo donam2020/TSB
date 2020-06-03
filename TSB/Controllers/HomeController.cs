@@ -25,7 +25,7 @@ namespace TSB.Controllers
             return View(model);
         }
 
-       
+
         public PartialViewResult Header()
         {
             var catagory = db.Categories;
@@ -37,18 +37,7 @@ namespace TSB.Controllers
             };
             return PartialView(model);
         }
-        public PartialViewResult Footer()
-        {
-            var category = db.Categories.ToList();           
-            var model = new aboutfotter
-            {
-                Articles = db.Articles.ToList(),
-                Categories = category,
-                Baners = db.Baners.OrderByDescending(x => x.CreateDate),
-                Config = db.Configs.FirstOrDefault()
-            };
-            return PartialView(model);
-        }
+       
 
         public ActionResult Introl()
         {
@@ -102,22 +91,29 @@ namespace TSB.Controllers
             };
             return View(model);
         }
+        public PartialViewResult Footer()
+        {
+            var category = db.Categories.ToList();
+            var model = new aboutfotter
+            {
+                Articles = db.Articles.ToList(),
+                Categories = category,
+                Baners = db.Baners.OrderByDescending(x => x.CreateDate),
+                Config = db.Configs.FirstOrDefault()
+            };
+            return PartialView(model);
+        }
         public ActionResult Details(int id)
         {
-            var article = db.Articles.Find(id);
-            //if(article == null)
-            //{
-            //    return RedirectToAction("Index");
-            //}
-            var ar = db.Articles.Where(x =>x.CategoryId == id);
+            var article = db.Articles.Find(id);         
+            //var ar = db.Articles.Where(x => x.CategoryId == id);
             var model = new HomeViewModel
             {
-                Articles = ar,
+                Article = article,
                 CategoryHome = db.Categories.ToList(),
-               
-                
+               Articles = db.Articles.ToList()
             };
-              return View(model);
+            return View(model);
         }
     }
 }
