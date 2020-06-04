@@ -16,15 +16,7 @@
             prevArrow: ".arrow-left",
             nextArrow: ".arrow-right",
             responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
+               
 
                 {
                     breakpoint: 480,
@@ -81,6 +73,7 @@
             ]
         });
     </script>
+
 }
 
 
@@ -125,21 +118,21 @@
                             @Html.Raw(item.Content)
                         </span>
                         <div class="ad">
-                            <ul>
-                                <li>
-                                    <div class="number">25 +</div>
-                                    <label>Kinh nghiệm</label>
-                                </li>
-                                <li>
-                                    <div class="number">500 +</div>
-                                    <label>Nhân viên</label>
-                                </li>
-                                <li>
-                                    <div class="number">8</div>
-                                    <label>Chi nhánh toàn cầu</label>
-                                </li>
-                            </ul>
-                        </div>
+                                <ul>
+                                    <li>
+                                        <div id="transaction-count" class="number"></div>
+                                        <label>Kinh nghiệm</label>
+                                    </li>
+                                    <li>
+                                        <div id="customer-count" class="number"></div>
+                                        <label>Nhân viên</label>
+                                    </li>
+                                    <li>
+                                        <div id="city-count" class="number"></div>
+                                        <label>Chi nhánh toàn cầu</label>
+                                    </li>
+                                </ul>
+                            </div>
 
                     </div>
                 }
@@ -153,7 +146,7 @@
                     </div>
                 }
 
-             
+
             </div>
         </div>
     </div>
@@ -258,7 +251,7 @@
                         </div>
 
                     </div>
-                }                
+                }
             </div>
             <div class="arrow">
                 <button class=" arrow-left"><i class="fas fa-angle-left"></i></button>
