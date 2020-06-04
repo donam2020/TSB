@@ -81,13 +81,14 @@ namespace TSB.Controllers
             {
                 return RedirectToAction("Index");
             }
-            var article = db.Articles.Where(x => x.CategoryId == catid).OrderBy(x => x.CreateDate).ToList();
+            //var article = db.Articles.Where(x => x.CategoryId == catid).OrderBy(x => x.CreateDate).ToList();
             var model = new DetailsCategory
-            {
+            { 
                 Baners = db.Baners.ToList(),
                 Category = category,
-                Articles = article,
+                Articles = db.Articles.OrderByDescending(x=>x.CreateDate),
                 CategoryHome = db.Categories.ToList()
+                
             };
             return View(model);
         }

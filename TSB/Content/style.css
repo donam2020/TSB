@@ -732,6 +732,20 @@ a:focus {
   font-weight: bold;
   text-align: center;
 }
+.category .main {
+  display: flex;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+.category .avatar {
+  width: 150px;
+}
+.category .avatar img {
+  width: 100%;
+}
+.category .content {
+  padding-left: 10px;
+}
 @media only screen and (max-width: 600px) {
   header {
     display: none;
