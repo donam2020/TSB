@@ -5,14 +5,16 @@
     Layout = "~/Views/Shared/_LayouAdmin.cshtml";
 }
 
-<h2>Create</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Update","Config", new { id = Model.Id},FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-
+<div class="form-horizontal mt-3">
+    @if(ViewBag.Update == "Update")
+    {
+        <p class="alert alert-success">Update Success</p>
+    }
 
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -145,6 +147,3 @@
 </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

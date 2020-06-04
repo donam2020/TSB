@@ -418,6 +418,7 @@ footer .header-bottom .nav-menu ul li a {
 #news .slider .img-avatar,
 #comment .slider .img-avatar {
   overflow: hidden;
+  height: 215px;
 }
 #news .slider .img-avatar img:hover,
 #comment .slider .img-avatar img:hover {
@@ -662,7 +663,8 @@ footer .name:before {
 }
 .slick-slide:focus,
 input:focus,
-button:focus {
+button:focus,
+a:focus {
   outline: none;
 }
 /*introl*/
@@ -729,6 +731,39 @@ button:focus {
   font-size: 220%;
   font-weight: bold;
   text-align: center;
+}
+span p {
+  mix-blend-mode: difference;
+  transform: translateY(-50px);
+  animation: text 10s 1.5s ease-in-out infinite;
+  /*&:last-child{
+            animation-delay:1s;
+        }*/
+}
+span p:first-child {
+  animation-delay: 1s;
+}
+@keyframes text {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  }
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  }
+  80% {
+    transform: translateY(0);
+    opacity: 0;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 1;
+    clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+  }
 }
 @media only screen and (max-width: 600px) {
   header {

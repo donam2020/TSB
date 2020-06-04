@@ -153,9 +153,7 @@
                     </div>
                 }
 
-                @*<div class="img-ad">
-                        <img src="~/Content/img/introl/2.png" alt="" />
-                    </div>*@
+             
             </div>
         </div>
     </div>
@@ -255,16 +253,12 @@
                                 @item.Sumary
                             </span>
                         </div>
-
-
                         <div class="continu">
                             <a href="">Xem thêm </a>
                         </div>
 
                     </div>
-                }
-
-
+                }                
             </div>
             <div class="arrow">
                 <button class=" arrow-left"><i class="fas fa-angle-left"></i></button>
@@ -313,7 +307,7 @@
                 <h2>Nhận xét của khách hàng</h2>
             </div>
             <div class="slider-coment">
-                @foreach (var customer in Model.Customers.Skip(0).Take(2))
+                @foreach (var customer in Model.Customers)
                 {
                     <div class="">
 
