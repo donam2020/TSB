@@ -733,35 +733,34 @@ a:focus {
   text-align: center;
 }
 span p {
-  mix-blend-mode: difference;
   transform: translateY(-50px);
   animation: text 10s 1.5s ease-in-out infinite;
-  /*&:last-child{
-            animation-delay:1s;
-        }*/
 }
 span p:first-child {
+  animation-delay: 2s;
+}
+span p:last-child {
   animation-delay: 1s;
 }
 @keyframes text {
   0% {
-    transform: translateY(50px);
+    transform: translateY(-50px);
     opacity: 0;
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
   }
   20% {
     transform: translateY(0);
-    opacity: 1;
+    opacity: 0;
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
   }
   80% {
     transform: translateY(0);
-    opacity: 0;
+    opacity: 1;
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
   }
   100% {
-    transform: translateY(10px);
-    opacity: 1;
+    transform: translateY(50px);
+    opacity: 0;
     clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
   }
 }
@@ -781,6 +780,15 @@ span p:first-child {
     font-size: 39px;
     display: block;
     color: #5c5c5c;
+  }
+  .menu .header-bottom .btn-mobile .bar1,
+  .menu .header-bottom .btn-mobile .bar2,
+  .menu .header-bottom .btn-mobile .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
   }
   .menu .header-bottom .nav-menu {
     background: #fff;

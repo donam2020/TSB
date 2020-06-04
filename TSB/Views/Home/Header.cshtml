@@ -2,44 +2,44 @@
 
 
 
-    <header>
+<header>
 
-            <div class="left">
-                <div class="icon-follow">
-                    <span>Follow us:</span>
-                    <ul>
+    <div class="left">
+        <div class="icon-follow">
+            <span>Follow us:</span>
+            <ul>
 
-                        <li><a href="@Model.Configs.LinkTwichter"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="@Model.Configs.LinkTwichter"><i class="fab fa-twitter"></i></a></li>
 
-                        <li><a href="@Model.Configs.LinkGoogle"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a href="@Model.Configs.LinkGoogle"><i class="fab fa-google-plus-g"></i></a></li>
 
-                        <li><a href="@Model.Configs.LinkFacebook"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="@Model.Configs.LinkFacebook"><i class="fab fa-facebook-f"></i></a></li>
 
-                        <li><a href="@Model.Configs.LinkYoutube"><i class="fab fa-youtube"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+                <li><a href="@Model.Configs.LinkYoutube"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </div>
 
-            <div class="right">
-                <div class="phone">
-                    <a href="">@Model.Configs.Phone <i class="fa fa-phone-alt"></i></a>
-                </div>
-                <div class="mail">
-                    <a href=" info@tsb-hn.com"> @Model.Configs.Email<i class="fal fa-envelope"></i></a>
-                </div>
+    <div class="right">
+        <div class="phone">
+            <a href="">@Model.Configs.Phone <i class="fa fa-phone-alt"></i></a>
+        </div>
+        <div class="mail">
+            <a href=" info@tsb-hn.com"> @Model.Configs.Email<i class="fal fa-envelope"></i></a>
+        </div>
 
-            </div>
-   
+    </div>
 
-    </header>
+
+</header>
 <div class="menu">
     <div class="container">
         <div class="logo">
             @foreach (var item in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Logo).Take(1))
             {
                 @*<a href="">
-                    <img src="~/Content/img/logo.png" />
-                </a>*@
+                        <img src="~/Content/img/logo.png" />
+                    </a>*@
                 <a href="/">
                     <img src="@item.Image" alt="" />
                 </a>
@@ -48,17 +48,24 @@
         </div>
         <div class="header-bottom">
             <a class="btn-mobile" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
+                @*<i class="fa fa-bars"></i>*@
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
             </a>
             <script>
+               
                 function myFunction() {
                     var x = document.getElementById("nav-menu");
-                    if (x.className === "nav-menu") {
+                    if (x.className === "nav-menu"){
                         x.className += " responsive-menu";
+                       
                     } else {
                         x.className = "nav-menu";
-                    }
-                }</script>
+                    }            
+                    
+                }
+            </script>
             <div class="nav-menu" id="nav-menu">
                 <div class="space" onclick="myFunction()"></div>
                 <ul>
@@ -69,9 +76,9 @@
                     }
 
                     @*<li><a href="">Sản phẩm & giải pháp</a></li>
-                    <li><a href="">Tin tức</a></li>
-                    <li><a href="">Tuyển dụng</a></li>
-                    <li><a href="">Khách hàng</a></li>*@
+                        <li><a href="">Tin tức</a></li>
+                        <li><a href="">Tuyển dụng</a></li>
+                        <li><a href="">Khách hàng</a></li>*@
                     <li><a href="@Url.Action("Create","Contact")">Liên hệ</a></li>
                 </ul>
             </div>
