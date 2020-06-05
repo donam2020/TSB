@@ -59,9 +59,6 @@ namespace TSB.Controllers
             };
             return PartialView(model);
         }
-        public PartialViewResult Baner()
-        {
-            return PartialView();
-        }
+       
     }
 }
