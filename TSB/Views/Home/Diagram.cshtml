@@ -1,0 +1,38 @@
+﻿@model TSB.ViewModel.HomeViewModel
+    @{
+        ViewBag.Title = ViewBag.messenger;
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <div class="container contact">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 ">
+                <h2 style=" text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span> @ViewBag.messenger</span></h2>
+                <div class="img">
+                    <img src="~/Content/img/bieu-do.jpg" alt="" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-2 p-0">
+                <ul>
+                    @foreach (var category in Model.CategoryHome.Where(x => x.TypeShow == TSB.Entites.TyShow.Article && x.ParentId == null).Take(1))
+                    {
+                        <li class="action">@category.Name</li>
+                        foreach (var childs in Model.CategoryHome.Where(x => x.ParentId == category.Id))
+                        {
+                            <li><a href="@Url.Action("Introl","Home",new { catID = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
+                            @*<li><a href="@Url.Action("History","Home")"><i class="far fa-chevron-circle-right"></i>Lịch sử phát triển</a></li>
+                <li><a href="#"><i class="far fa-chevron-circle-right"></i>Sơ đồ tổ chức</a></li>
+                <li><a href="#"><i class="far fa-chevron-circle-right"></i>Mạng lưới TSB</a></li>
+                <li><a href="#"><i class="far fa-chevron-circle-right"></i>Sơ đồ chức năng</a></li>*@
+                        }
+
+                    }
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+    </div>

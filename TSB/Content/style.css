@@ -89,7 +89,8 @@ header .right a {
 }
 header .right a i {
   color: #DF6512;
-  font-size: 10px;
+  font-size: 12px;
+  margin-left: 5px;
 }
 .menu,
 footer {
@@ -183,6 +184,12 @@ footer .header-bottom .nav-menu ul li a {
   font-style: normal;
   font-weight: normal;
   margin-bottom: 30px;
+}
+#baner button {
+  background: #DF6512;
+  border: none;
+  color: #fff;
+  padding: 10px 30px;
 }
 #baner button:hover {
   background: #14488B;
@@ -320,22 +327,6 @@ footer .header-bottom .nav-menu ul li a {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  /*.arrow-right {
-            text-align: center;
-            border-radius: 50%;
-            background: #FFFFFF;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
-            width: 40px;
-            height: 40px;
-            margin: auto;
-            padding: 10px;
-            position: absolute;
-            transform: translate(80px, -20px);
-
-            i {
-                color: @cl-d;
-            }
-        }*/
 }
 #control ul .text {
   padding: 10px 20px;
@@ -347,6 +338,9 @@ footer .header-bottom .nav-menu ul li a {
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
+}
+#control ul .title a {
+  text-decoration: none;
 }
 #control ul .content {
   font-size: 14px;
@@ -380,7 +374,7 @@ footer .header-bottom .nav-menu ul li a {
   transform: translate(10px, 50%);
 }
 #service .content {
-  transform: translate(0px, 60px);
+  transform: translate(0px, 35px);
   line-height: 35px;
 }
 #service .content ul {
@@ -424,6 +418,7 @@ footer .header-bottom .nav-menu ul li a {
 #news .slider .img-avatar,
 #comment .slider .img-avatar {
   overflow: hidden;
+  height: 215px;
 }
 #news .slider .img-avatar img:hover,
 #comment .slider .img-avatar img:hover {
@@ -454,6 +449,10 @@ footer .header-bottom .nav-menu ul li a {
 #news .slider .slick,
 #comment .slider .slick {
   padding-right: 20px;
+}
+#news .slider .slick:focus,
+#comment .slider .slick:focus {
+  outline: none;
 }
 #news .arrow,
 #comment .arrow {
@@ -646,9 +645,12 @@ footer .name:before {
 .contact {
   color: #673915;
 }
+.contact i {
+  margin-right: 10px;
+}
 .contact h2 {
   background: #fff;
-  font-size: 17px;
+  font-size: 100%;
   color: #14488B;
 }
 .contact form {
@@ -658,6 +660,91 @@ footer .name:before {
   font-size: 14px;
   font-weight: normal;
   padding: 5px 0 !important;
+}
+.slick-slide:focus,
+input:focus,
+button:focus,
+a:focus {
+  outline: none;
+}
+/*introl*/
+.p-0 {
+  padding: 0;
+}
+.contact .table-striped {
+  border: 2px solid #bbe0e3;
+}
+.contact .table-striped td {
+  border: 2px solid #bbe0e3;
+  vertical-align: middle;
+}
+.contact .table-striped td img {
+  width: 40%;
+}
+.contact .td-30 {
+  width: 30%;
+}
+.contact .td-70 {
+  width: 70%;
+  padding: 10px 10px;
+}
+.contact ul {
+  list-style: none;
+}
+.contact ul li {
+  border-bottom: 1px solid #999;
+  padding: 10px 10px;
+}
+.contact ul li a {
+  color: #393939;
+  text-decoration: none;
+}
+.contact ul li a:hover {
+  color: #14488B;
+  transition: all 1s;
+}
+.contact .action {
+  background: #14488B;
+  color: #fff;
+  padding: 5px 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.contact .text-content {
+  padding: 20px 0;
+}
+.contact .text-content .img {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+}
+.contact .text-content .img img {
+  width: 20%;
+}
+.contact .text-content .content {
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 500;
+  font-weight: normal;
+}
+.contact .title {
+  font-size: 220%;
+  font-weight: bold;
+  text-align: center;
+}
+.category .main {
+  display: flex;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+.category .avatar {
+  width: 150px;
+}
+.category .avatar img {
+  width: 100%;
+}
+.category .content {
+  padding-left: 10px;
 }
 @media only screen and (max-width: 600px) {
   header {
@@ -672,8 +759,18 @@ footer .name:before {
   }
   .menu .header-bottom .btn-mobile {
     float: right;
-    font-size: 30px;
+    font-size: 39px;
     display: block;
+    color: #5c5c5c;
+  }
+  .menu .header-bottom .btn-mobile .bar1,
+  .menu .header-bottom .btn-mobile .bar2,
+  .menu .header-bottom .btn-mobile .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
   }
   .menu .header-bottom .nav-menu {
     background: #fff;
@@ -835,5 +932,14 @@ footer .name:before {
   }
   #comment .quotes .email-contact {
     margin: 0;
+  }
+  #comment .quotes .email-contact input {
+    transform: translate(-18px, 0px);
+    border-radius: 5px;
+    border: none;
+  }
+  #comment .quotes .email-contact button {
+    transform: translate(0px, 0px);
+    border-radius: 5px;
   }
 }

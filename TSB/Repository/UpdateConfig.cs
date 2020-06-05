@@ -43,6 +43,7 @@ namespace TSB.Repository
                 update.Description = config.Description;
                 update.CategoryAbout = config.CategoryAbout;
                 update.Addres = config.Addres;
+                update.Fax = config.Fax;
                 var res = db.SaveChanges();
                 return res > 0 ? update : null;
 

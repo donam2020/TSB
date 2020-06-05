@@ -9,8 +9,10 @@ namespace TSB.Entites
     public class Config
     {
         public int Id { get; set; }
-
-        
+        [Display(Name ="Ngày tạo")]
+        public DateTime CreateDate { get; set; }
+        [Display(Name ="Người tạo")]
+        public string CreateBy { get; set; }
         public string Name { get; set; }
         [Display(Name ="Địa chỉ")]
         public string Addres { get; set; }
@@ -38,5 +40,7 @@ namespace TSB.Entites
         public string LinkTwichter { get; set; }
 
         public string LinkGoogle { get; set; }
+        [RegularExpression(@"\d+", ErrorMessage = "Chỉ nhập số nguyên")]
+        public int Fax { get; set; }
     }
 }

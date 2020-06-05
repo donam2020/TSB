@@ -193,6 +193,18 @@
     <Compile Include="Migrations\202005290301403_update-config.designer.cs">
       <DependentUpon>202005290301403_update-config.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006010112593_edit.cs" />
+    <Compile Include="Migrations\202006010112593_edit.designer.cs">
+      <DependentUpon>202006010112593_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006010126446_update-date-cofig.cs" />
+    <Compile Include="Migrations\202006010126446_update-date-cofig.designer.cs">
+      <DependentUpon>202006010126446_update-date-cofig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006010457105_fax-config.cs" />
+    <Compile Include="Migrations\202006010457105_fax-config.designer.cs">
+      <DependentUpon>202006010457105_fax-config.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,6 +256,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\button.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
@@ -1340,7 +1353,6 @@
     <Content Include="Views\Contact\Create.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\Delete.cshtml" />
-    <Content Include="Views\Home\Baner.cshtml" />
     <Content Include="Views\Config\Index.cshtml" />
     <Content Include="Views\Config\Create.cshtml" />
     <Content Include="Views\Config\Update.cshtml" />
@@ -1349,6 +1361,12 @@
     <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Home\Introl.cshtml" />
+    <Content Include="Views\Home\History.cshtml" />
+    <Content Include="Views\Home\Diagram.cshtml" />
+    <Content Include="Views\Home\category.cshtml" />
+    <Content Include="Views\Home\Customer.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1394,6 +1412,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005290301403_update-config.resx">
       <DependentUpon>202005290301403_update-config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006010112593_edit.resx">
+      <DependentUpon>202006010112593_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006010126446_update-date-cofig.resx">
+      <DependentUpon>202006010126446_update-date-cofig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006010457105_fax-config.resx">
+      <DependentUpon>202006010457105_fax-config.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

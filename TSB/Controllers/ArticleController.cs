@@ -27,7 +27,7 @@ namespace TSB.Controllers
             {
                 article = article.Where(x => x.CategoryId == CatId);
             }
-            ViewBag.category = new SelectList(db.Categories.Where(x => x.ParentId == null).OrderBy(x => x.Order), "Id", "Name"); ;
+            ViewBag.category = new SelectList(db.Categories.Where(x => x.ParentId == null).OrderBy(x => x.Order), "Id", "Name");
             ViewBag.catId = CatId;
             return View(article.OrderByDescending(x => x.CreateDate).ToPagedList(PageNumber, pageSize));
         }
@@ -105,5 +105,6 @@ namespace TSB.Controllers
             var details = service.Getone(id);
             return View(details);
         }
+       
     }
 }

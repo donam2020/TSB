@@ -41,8 +41,8 @@
             <li>
                 <a href="">Quản lí Config</a>
                 <ul>
-                    <li>@Html.ActionLink("Thêm Config", "Create", "Config")</li>
-                    <li>@Html.ActionLink("Danh sách config", "Index", "Config")</li>
+                   
+                    <li>@Html.ActionLink("Danh sách config", "Create", "Config")</li>
                     <li>@Html.ActionLink("Danh sách Customer", "Index", "Customer")</li>
                 </ul>
             </li>
@@ -81,14 +81,14 @@
             });
         });
     </script>
-    @*<script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function () {
-            $("#btnSelectImg").click(function () {
+            $("#btnSelectImg2").click(function () {
                 var finder = new CKFinder();
                 finder.selectActionFunction = function (fileUrl) {
                     $("#ImageAbout").val(fileUrl);
                     $("#Image").val(fileUrl);
-                    $("#ImagePreview").html("<img src='" + fileUrl + "' width='200' />");
+                    $("#ImagePreview2").html("<img src='" + fileUrl + "' width='200' />");
                 };
                 finder.popup();
             });
@@ -106,6 +106,6 @@
                 finder.popup();
             });
         });
-    </script>*@
+    </script>
 </body>
 </html>
