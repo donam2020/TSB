@@ -108,22 +108,26 @@
             <div class="row">
                 <div class="col-md-10">
                     <h2>@Model.Category.Name</h2>
-                    @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Category))
-                    {
-                        <div class="main">
-                            <div class="avatar">
-                                <img src="@item.Image" alt="" />
-                            </div>
-                            <div class="content">
-                                <div class="name">
-                                    <a href=""> @item.Name</a>
-                               
-                                </div>
-                                <div class="sumary">@item.Sumary</div>
-                            </div>
-                        </div>
 
-                    }
+                    <ul class="related-new">
+                        @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Category || x.Category.TypeShow == TSB.Entites.TyShow.Slider))
+                        {
+                            <li>
+                                <div class="avatar-new">
+                                    <img src="@item.Image" alt="" />
+                                </div>
+                                <div class="text">
+                                    <a href="@Url.Action("Details","Home",new { id = item.Id})">@item.Name</a>
+
+                                    <p>
+                                        @item.Sumary
+                                    </p>
+                                </div>
+                            </li>
+
+                        }
+                    </ul>
+
 
                 </div>
             </div>
@@ -197,7 +201,7 @@
         <div class="container contact">
             <h2 style="text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span> @Model.Category.Name</span></h2>
             <div class="text">
-                @foreach (var item in Model.Articles.Where(x=>x.Category.TypeShow == TSB.Entites.TyShow.Tuyendung))
+                @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Tuyendung))
                 {
                     <div class="title">@item.Title</div>
                     <div class="text">
