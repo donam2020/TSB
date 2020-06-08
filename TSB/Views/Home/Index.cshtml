@@ -30,7 +30,7 @@
         });
 
     </script>
-    <script>
+    @*<script>
         $('.slider-customer').slick({
             autoplaySpeed: true,
             autoplay: true,
@@ -50,7 +50,7 @@
 
             ]
         });
-    </script>
+    </script>*@
 
     <script>
         $('.slider-coment').slick({
@@ -103,7 +103,7 @@
             <div class="col-sm-12 col-md-6 introl-left">
                 @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Article).Skip(1).Take(1))
                 {
-                    <div class="title">
+                    <div class="title line">
                         <span>@item.Title</span>
                         <h2>@item.Name</h2>
                     </div>
@@ -274,7 +274,7 @@
             <span>Đối tác của chúng tôi</span>
             <h2>Đối tác tiêu biểu</h2>
         </div>
-        <div class="slider-customer">
+        <div class="slider">
             @foreach (var baner in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Partner))
             {
                 <a href=""><img src="@baner.Image" alt="Alternate Text" /></a>
