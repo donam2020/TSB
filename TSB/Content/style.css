@@ -250,7 +250,7 @@ footer .header-bottom .nav-menu ul li a {
 #news .introl-left,
 #customer .introl-left,
 #comment .introl-left {
-  transform: translate(10px, 40%);
+  transform: translate(10px, 30%);
 }
 #introl .introl-left .content span,
 #control .introl-left .content span,
@@ -353,6 +353,7 @@ footer .header-bottom .nav-menu ul li a {
   padding-top: 25px;
   border-bottom: 2px solid #14488B;
   position: relative;
+  width: 218px;
 }
 #control ul li:hover {
   transition: all 1s;
@@ -642,21 +643,26 @@ footer .name:before {
   transform: translate(0px, 30px);
 }
 /*Contact*/
-.contact {
+.contact,
+.category {
   color: #673915;
 }
-.contact i {
+.contact i,
+.category i {
   margin-right: 10px;
 }
-.contact h2 {
+.contact h2,
+.category h2 {
   background: #fff;
   font-size: 100%;
   color: #14488B;
 }
-.contact form {
+.contact form,
+.category form {
   padding: 15px;
 }
-.contact label {
+.contact label,
+.category label {
   font-size: 14px;
   font-weight: normal;
   padding: 5px 0 !important;
@@ -734,6 +740,7 @@ a:focus {
 }
 .category ul {
   list-style: none;
+  margin-top: 30px;
 }
 .category ul li {
   display: flex;

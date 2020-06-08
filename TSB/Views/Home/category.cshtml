@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-xs-12 col-md-2 p-0">
                     <ul>
-                        @foreach (var category in Model.CategoryHome.Where(x => x.ParentId == null).Skip(1).Take(1))
+                        @foreach (var category in Model.CategoryHome.Where(x => x.ParentId == null).Skip(4).Take(1))
                         {
                             <li class="action">@category.Name</li>
                             foreach (var childs in Model.CategoryHome.Where(x => x.ParentId == category.Id))
@@ -107,7 +107,7 @@
         <div class="container category">
             <div class="row">
                 <div class="col-md-10">
-                    <h2>@Model.Category.Name</h2>
+                    <h2 style="text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span> @Model.Category.Name</span></h2>
 
                     <ul class="related-new">
                         @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Category || x.Category.TypeShow == TSB.Entites.TyShow.Slider))
@@ -211,6 +211,28 @@
             </div>
         </div>
     }
+    else if (Model.Category.TypeShow == TSB.Entites.TyShow.Customer)
+    {
+        <div id="customer">
+            <div class="container">
+                <div class="title">
+                    <span>Đối tác của chúng tôi</span>
+                    <h2>Đối tác tiêu biểu</h2>
+                </div>
+                <div class="slider">
+                    @foreach (var baner in Model.Baners.Where(x => x.Positon == TSB.Entites.GruopBaner.Partner))
+                    {
+                        <a href=""><img src="@baner.Image" alt="Alternate Text" /></a>
+                    }
+                    @*@for (int i = 0; i < 6; i++)
+                        {
+
+                        }*@
+                </div>
+            </div>
+        </div>
+    }
+
 }
 
 @section scripts{

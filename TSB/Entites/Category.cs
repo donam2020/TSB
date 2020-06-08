@@ -36,7 +36,9 @@ namespace TSB.Entites
         Article,
         Slider,
         [Display(Name ="Tuyển dụng")]
-        Tuyendung
+        Tuyendung,
+        [Display(Name ="Khách hàng")]
+        Customer
     }
     public class CategoryC
     {

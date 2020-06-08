@@ -6,7 +6,7 @@
 <div class="container contact">
     <div class="row">
         <div class="col-xs-12 col-md-10 ">           
-                <h2 style=" text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span>@Model.Article.Category.Name</span></h2>
+                <h2 style=" text-transform:uppercase"> <i class="far fa-chevron-circle-right"></i><span>@Model.Article.Name</span></h2>
                 <div class="text-content">
                     <div class="img">
                         <img src="@Model.Article.Image" alt="" />
@@ -21,9 +21,9 @@
                 @foreach (var category in Model.CategoryHome.Where(x =>x.ParentId == null).Take(1))
                 {
                     <li class="action">@category.Name</li>
-                    foreach (var childs in Model.Articles.Where(x =>x.Category.ParentId == category.Id))
+                    foreach (var childs in Model.Articles.Where(x =>x.CategoryId == category.Id))
                     {
-                        <li><a href="@Url.Action("Details","Home",new { id = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Category.Name</a></li>
+                        <li><a href="@Url.Action("Details","Home",new { id = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
                     }
                 }
             </ul>
