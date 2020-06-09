@@ -16,6 +16,7 @@
         <th>Hoạt động        </th>
         <th>Ảnh đại diện</th>
         <th>Kiểu</th>
+        <th>Metatitle</th>
         <th></th>
     </tr>
     @foreach (var item in Model.ParentId)
@@ -26,6 +27,7 @@
             <td>@Html.DisplayFor(x => item.Status)</td>
             <td style="width:200px;"><img src="@item.Image" alt=""  /></td>
             <td>@Html.DisplayFor(x=>item.TypeShow)</td>
+            <td>@Html.DisplayFor(x=>item.Metatitle)</td>
             <td>
                 @Html.ActionLink("Chỉnh sửa", "Update", new { id = item.Id }) |
                 @Html.ActionLink("Xoá", "Delete", new { id = item.Id })
@@ -46,6 +48,7 @@
                     <img src="@childs.Image" alt="" />
                 </td>
                 <td>@Html.DisplayFor(x=>childs.TypeShow)</td>
+                <td>@Html.DisplayFor(x=>childs.Metatitle)</td>
                 <td>
                     @Html.ActionLink("Chỉnh sửa", "Update", new { id = childs.Id })|
                     @Html.ActionLink("Xoá", "Delete", new { id = childs.Id })

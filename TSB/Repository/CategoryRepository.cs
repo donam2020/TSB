@@ -30,6 +30,7 @@ namespace TSB.Repository
             var update = db.Categories.FirstOrDefault(x => x.Id == cate.Id);
             if(update != null)
             {
+                update.Metatitle = cate.Metatitle;
                 update.Image = cate.Image;
                 update.Name = cate.Name;
                 update.Order = cate.Order;

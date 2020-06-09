@@ -14,6 +14,18 @@ namespace TSB
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+            name: "map",
+            url: "menu/{metatitle}-{catid}",
+            defaults: new { controller = "Home", action = "category", id = UrlParameter.Optional }
+        );
+
+            routes.MapRoute(
+               name: "vi",
+               url: "chi-tiet/{metatitle}-{id}",
+               defaults: new { controller = "Home", action = "Details", id = UrlParameter.Optional }
+           );
+           
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

@@ -30,6 +30,7 @@ namespace TSB.Entites
         public bool ShowHome { get; set; }
         [ScaffoldColumn(false)]
         public int CountView { get; set; }
+      
         [Display(Name = "Trạng thái")]
         public bool Status { get; set; }
         [ForeignKey("CategoryId")]

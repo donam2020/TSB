@@ -20,10 +20,12 @@
             <ul>
                 @foreach (var category in Model.CategoryHome.Where(x =>x.ParentId == null).Take(1))
                 {
+                    
                     <li class="action">@category.Name</li>
                     foreach (var childs in Model.Articles.Where(x =>x.CategoryId == category.Id))
                     {
-                        <li><a href="@Url.Action("Details","Home",new { id = childs.Id})"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
+                        var url = "/chi-tiet/" + category.Metatitle + "-" + childs.Id;
+                        <li><a href="@url"><i class="far fa-chevron-circle-right"></i>@childs.Name</a></li>
                     }
                 }
             </ul>

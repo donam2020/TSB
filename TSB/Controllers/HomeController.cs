@@ -91,7 +91,8 @@ namespace TSB.Controllers
                 Baners = db.Baners.ToList(),
                 Category = category,
                 Articles = db.Articles.OrderByDescending(x => x.CreateDate),
-                CategoryHome = db.Categories.ToList()
+                CategoryHome = db.Categories.ToList(),
+               
 
             };
             return View(model);
@@ -113,7 +114,8 @@ namespace TSB.Controllers
             var article = db.Articles.Find(id);
             //var ar = db.Articles.Where(x => x.CategoryId == id);
             var model = new HomeViewModel
-            {
+            { 
+
                 Article = article,
                 CategoryHome = db.Categories.ToList(),
                 Articles = db.Articles.ToList()

@@ -33,7 +33,7 @@ namespace TSB.Repository
         {
             var update = db.Articles.FirstOrDefault(x => x.Id == article.Id);
             if (update != null)
-            {
+            {              
                 update.Image = article.Image;
                 update.Name = article.Name;
                 update.ShowHome = article.ShowHome;

@@ -21,6 +21,7 @@ namespace TSB.Entites
         public bool ShowHome { get; set; }
         [Display(Name = "Danh mục cha")]
         public int? ParentId { get; set; }
+        public string Metatitle { get; set; }
         [Display(Name = "Trạng thái")]
         public bool Status { get; set; }
         public TyShow TypeShow { get; set; }

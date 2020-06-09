@@ -205,6 +205,14 @@
     <Compile Include="Migrations\202006010457105_fax-config.designer.cs">
       <DependentUpon>202006010457105_fax-config.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006090807038_addmetatitle.cs" />
+    <Compile Include="Migrations\202006090807038_addmetatitle.designer.cs">
+      <DependentUpon>202006090807038_addmetatitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006090822388_dropar.cs" />
+    <Compile Include="Migrations\202006090822388_dropar.designer.cs">
+      <DependentUpon>202006090822388_dropar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1421,6 +1429,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006010457105_fax-config.resx">
       <DependentUpon>202006010457105_fax-config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006090807038_addmetatitle.resx">
+      <DependentUpon>202006090807038_addmetatitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006090822388_dropar.resx">
+      <DependentUpon>202006090822388_dropar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
