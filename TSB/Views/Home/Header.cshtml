@@ -70,7 +70,7 @@
                     <li><a href="/" class="action"><i class="fal fa-home-lg-alt"></i>  Trang Chủ</a></li>
                     @foreach (var category in Model.CategoryHome.Where(x => x.ParentId == null).Take(5))
                     {
-                        var url = "/menu/" + category.Metatitle + "-" + category.Id;
+                        var url = "/vi/" + category.Metatitle + "-" + category.Id;
                         <li>
 
                             <a href="@url">@category.Name</a>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  

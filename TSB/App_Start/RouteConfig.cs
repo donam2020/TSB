@@ -15,7 +15,7 @@ namespace TSB
 
             routes.MapRoute(
             name: "map",
-            url: "menu/{metatitle}-{catid}",
+            url: "vi/{metatitle}-{catid}",
             defaults: new { controller = "Home", action = "category", id = UrlParameter.Optional }
         );
 
