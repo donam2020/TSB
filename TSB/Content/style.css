@@ -739,9 +739,9 @@ a:focus {
   padding: 20px 0;
 }
 .contact .text-content .img {
+  float: left;
+  width: 50%;
   text-align: center;
-  margin: 20px auto;
-  padding: 10px;
 }
 .contact .text-content .img img {
   width: 20%;
@@ -751,6 +751,9 @@ a:focus {
   line-height: 23px;
   font-weight: 500;
   font-weight: normal;
+  width: 50%;
+  float: left;
+  font-size: 14px;
 }
 .contact .title {
   font-size: 220%;

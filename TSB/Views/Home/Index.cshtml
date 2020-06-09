@@ -30,29 +30,7 @@
         });
 
     </script>
-    @*<script>
-        $('.slider-customer').slick({
-            autoplaySpeed: true,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            infinite: true,
-            slidesToShow: 2,
-            arrows: false,
-            responsive: [
-
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-
-            ]
-        });
-    </script>*@
-
-    <script>
+      <script>
         $('.slider-coment').slick({
             autoplaySpeed: true,
             autoplay: true,
@@ -227,12 +205,13 @@
             <div class="slider">
                 @foreach (var item in Model.Articles.Where(x => x.Category.TypeShow == TSB.Entites.TyShow.Slider))
                 {
+                    var url = "/chi-tiet/" + item.Category.Metatitle + "-" + item.Id; 
                     <div class="slick">
                         <div class="img-avatar">
                             <img src="@item.Image" alt="" />
                         </div>
                         <div class="title">
-                            <a href="@Url.Action("Details","Home",new { id = item.Id})">@item.Name</a>
+                            <a href="@url">@item.Name</a>
                         </div>
                         <div class="sumary">
                             <span>
@@ -241,7 +220,7 @@
                             </span>
                         </div>
                         <div class="continu">
-                            <a href="">Xem thêm </a>
+                            <a href="@url">Xem thêm </a>
                         </div>
 
                     </div>
