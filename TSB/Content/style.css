@@ -355,6 +355,20 @@ footer .header-bottom .nav-menu ul li a {
   position: relative;
   width: 218px;
 }
+#control ul li .arrow-right {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 1s;
+  background: #fff;
+  transform: translate(85px, 17px);
+}
+#control ul li .arrow-right i {
+  padding: 15px;
+  color: #DF6512;
+}
 #control ul li:hover {
   transition: all 1s;
   background: #001E57;
@@ -362,6 +376,11 @@ footer .header-bottom .nav-menu ul li a {
   border-bottom: 2px solid #DF6512;
 }
 #control ul li:hover .arrow-right {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   transition: all 1s;
   background: #DF6512;
 }
